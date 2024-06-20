@@ -11,8 +11,7 @@ if __name__ == "__main__":
     """
     df = pd.read_csv('666.csv')
     with open('data_cleaning/train.txt', 'a+', encoding='utf-8') as file:
-        for i in range(len(df)-3030):
-            i = i+3030
+        for i in range(len(df)):
             cn = df['company_name'][i] + ','
             ca = df['company_area'][i] + ','
             jn = df['job_name'][i] + ','

@@ -1,11 +1,11 @@
 *
 */
-!/.git
-!/.gitignore
+!.gitignore
 !/README.md
 !/data
 !/data_cleaning
 !/myspider
+!requirements.txt
 !/src
 !/Stopwords
 !/Stopwords/stopwords_full.txt
