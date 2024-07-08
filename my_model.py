@@ -11,7 +11,7 @@ class MyModel(nn.Module):
             name_typelist = [i.strip() for i in f.readlines()]
         self.bert = BertModel.from_pretrained("models/bert-base-multilingual-cased")
         self.dropout = nn.Dropout(dropout)
-        self.linear = nn.Linear(768, 5)
+        self.linear = nn.Linear(768, len(name_typelist))
         self.relu = nn.ReLU()
 
     def forward(self, data):

@@ -20,7 +20,7 @@ def train(epoch):
                     }
         label = new_data[2]
         output = model(inputs)
-        loss = output.loss
+        loss = loss_fc(output, label)
         loss.backward()
         optimizer.step()
         epoch_bar.set_postfix(epoch=epoch, loss=loss)
@@ -66,6 +66,7 @@ if __name__ == '__main__':
     eval_dataloader = DataLoader(eval_dataset, batch_size=4, shuffle=True)
 
     model = MyModel().to(device)
+    loss_fc = nn.CrossEntropyLoss()
     optimizer = AdamW(model.parameters(), lr=5e-5)
     epochs = 20
 
