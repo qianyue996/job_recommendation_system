@@ -5,18 +5,22 @@ from transformers import BertModel, BertForSequenceClassification
 from my_dataset import MyDataset
 
 class MyModel(nn.Module):
-    def __init__(self):
+    def __init__(self, dropout=0.5):
         super().__init__()
         with open('data/train_type.txt', 'r', encoding='utf-8') as f:
             name_typelist = [i.strip() for i in f.readlines()]
-        self.bert = BertForSequenceClassification.from_pretrained("models/bert-base-multilingual-cased", num_labels=len(name_typelist))
+        self.bert = BertModel.from_pretrained("models/bert-base-multilingual-cased")
+        self.dropout = nn.Dropout(dropout)
+        self.linear = nn.Linear(768, 5)
+        self.relu = nn.ReLU()
 
-    def forward(self, input_ids, attention_mask, label):
-        input = {'input_ids': input_ids,
-                 'attention_mask': attention_mask,
-                 'labels': label}
-        pred = self.bert(**input)
-        return pred
+    def forward(self, data):
+        inputs = data
+        _, pooled_output = self.bert(**inputs, return_dict=False)
+        dropout_output = self.dropout(pooled_output)
+        linear_output = self.linear(dropout_output)
+        final_layer = self.relu(linear_output)
+        return final_layer
 
 if __name__ == '__main__':
     # from transformers import BertTokenizer, BertModel

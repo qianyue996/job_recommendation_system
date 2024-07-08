@@ -4,7 +4,8 @@ import os
 import pandas as pd
 from transformers import BertTokenizer
 
-def prepare_data(datapath, flag=False):
+def prepare_data(flag=False):
+    datapath='myspider/train.txt'
     if flag:
         data_list = []
         with open(datapath, 'r', encoding='utf-8') as f:
@@ -12,21 +13,31 @@ def prepare_data(datapath, flag=False):
         for i in txt_data:
             i = i.strip().split('__')
             data_list.append(i)
+            print(f'写入数据中...: {i}\n')
         df = pd.DataFrame(data_list)
         df.to_csv('data/train.csv', encoding='utf_8_sig')
-        print(f'写入数据中...: {i}\n')
+
+def get_classes(flag=False):
+    datapath='data/train.csv'
+    if flag:
+        df = pd.read_csv(datapath, encoding='utf_8_sig')
+        name_list = df['0'].to_list()
+        with open('data/train_type.txt', 'w', encoding='utf-8') as f:
+                for i in set(name_list):
+                    f.write(i+'\n')
 
 class MyDataset(Dataset):
     def __init__(self, datadir, mode="train"):
         super().__init__()
-        self.tokenizer = BertTokenizer.from_pretrained('models/bert-base-multilingual-cased')
         self.datadir = datadir
+        self.inputs = []
+
+        self.tokenizer = BertTokenizer.from_pretrained('models/bert-base-multilingual-cased')
         data_file = os.path.join(self.datadir, f'{mode}.csv')
         df = pd.read_csv(data_file, encoding='utf_8_sig')
         name_list = df['0'].to_list()
         with open('data/train_type.txt', 'r', encoding='utf-8') as f:
             self.name_typelist = [i.strip() for i in f.readlines()]
-        self.inputs = []
         for i in range(len(df)):
             area = df['1'].to_list()[i]
             name = df['2'].to_list()[i]
