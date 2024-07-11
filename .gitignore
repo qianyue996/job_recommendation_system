@@ -11,4 +11,5 @@
 !my_train.py
 
 !/myspider/
+!/myspider/custom_spider.py
 !/myspider/train.txt

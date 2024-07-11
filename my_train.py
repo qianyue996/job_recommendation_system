@@ -4,10 +4,23 @@ from torch.optim import AdamW
 import torch
 import tqdm
 import torch.nn as nn
+from transformers import BertModel
 from my_model import MyModel
 from my_dataset import prepare_data, get_classes
 import os
 import time
+
+# 定义联合损失函数
+class JointLoss(nn.Module):
+    def __init__(self):
+        super(JointLoss, self).__init__()
+        self.loss_level1 = nn.CrossEntropyLoss()
+        self.loss_level2 = nn.CrossEntropyLoss()
+    
+    def forward(self, logits, labels_level1, labels_level2):
+        loss1 = self.loss_level1(logits[:, :num_labels_level1], labels_level1)
+        loss2 = self.loss_level2(logits[:, num_labels_level1:], labels_level2)
+        return (loss1 + loss2) / 2  # 可以根据实际情况调整权重
 
 def train(epoch):
     model.train()
@@ -65,7 +78,13 @@ if __name__ == '__main__':
     train_dataloader = DataLoader(train_dataset, batch_size=4, shuffle=True)
     eval_dataloader = DataLoader(eval_dataset, batch_size=4, shuffle=True)
 
-    model = MyModel().to(device)
+    # 这里不调用my_model.py了，直接使用官方模型
+    # model = MyModel().to(device)
+    model = BertModel.from_pretrained('bert-base-chinese')
+
+    # 假设我们有两个层级的标签，每个层级都有自己的损失函数
+    num_labels_level1 = 2  # 一级标签的数量
+    num_labels_level2 = 3  # 二级标签的数量
     loss_fc = nn.CrossEntropyLoss()
     optimizer = AdamW(model.parameters(), lr=5e-5)
     epochs = 20
