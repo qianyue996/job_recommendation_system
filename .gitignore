@@ -12,4 +12,5 @@
 
 !/myspider/
 !/myspider/custom_spider.py
+!/myspider/job_type.json
 !/myspider/train.txt

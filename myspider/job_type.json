@@ -1,0 +1,1416 @@
+{
+    "互联网/AI": {
+        "后端开发": [
+            "Java&&https://www.zhipin.com/c101280100-p100101/",
+            "C/C++&&https://www.zhipin.com/c101280100-p100102/",
+            "PHP&&https://www.zhipin.com/c101280100-p100103/",
+            "Python&&https://www.zhipin.com/c101280100-p100109/",
+            "C#&&https://www.zhipin.com/c101280100-p100106/",
+            ".NET&&https://www.zhipin.com/c101280100-p100107/",
+            "Golang&&https://www.zhipin.com/c101280100-p100116/",
+            "Node.js&&https://www.zhipin.com/c101280100-p100114/",
+            "Hadoop&&https://www.zhipin.com/c101280100-p100108/",
+            "语音/视频/图形开发&&https://www.zhipin.com/c101280100-p100121/",
+            "GIS工程师&&https://www.zhipin.com/c101280100-p100124/",
+            "区块链工程师&&https://www.zhipin.com/c101280100-p100125/",
+            "全栈工程师&&https://www.zhipin.com/c101280100-p100123/",
+            "其他后端开发&&https://www.zhipin.com/c101280100-p100199/"
+        ],
+        "前端/移动开发": [
+            "前端开发工程师&&https://www.zhipin.com/c101280100-p100901/",
+            "Android&&https://www.zhipin.com/c101280100-p100202/",
+            "iOS&&https://www.zhipin.com/c101280100-p100203/",
+            "U3D&&https://www.zhipin.com/c101280100-p100209/",
+            "UE4&&https://www.zhipin.com/c101280100-p100211/",
+            "Cocos&&https://www.zhipin.com/c101280100-p100210/",
+            "技术美术&&https://www.zhipin.com/c101280100-p100212/",
+            "JavaScript&&https://www.zhipin.com/c101280100-p100208/",
+            "鸿蒙开发工程师&&https://www.zhipin.com/c101280100-p100213/"
+        ],
+        "测试": [
+            "测试工程师&&https://www.zhipin.com/c101280100-p100301/",
+            "软件测试&&https://www.zhipin.com/c101280100-p100309/",
+            "自动化测试&&https://www.zhipin.com/c101280100-p100302/",
+            "功能测试&&https://www.zhipin.com/c101280100-p100303/",
+            "测试开发&&https://www.zhipin.com/c101280100-p100305/",
+            "硬件测试&&https://www.zhipin.com/c101280100-p100308/",
+            "游戏测试&&https://www.zhipin.com/c101280100-p100307/",
+            "性能测试&&https://www.zhipin.com/c101280100-p100304/",
+            "渗透测试&&https://www.zhipin.com/c101280100-p100310/",
+            "测试经理&&https://www.zhipin.com/c101280100-p100703/"
+        ],
+        "运维/技术支持": [
+            "运维工程师&&https://www.zhipin.com/c101280100-p100401/",
+            "IT技术支持&&https://www.zhipin.com/c101280100-p100405/",
+            "网络工程师&&https://www.zhipin.com/c101280100-p100403/",
+            "网络安全&&https://www.zhipin.com/c101280100-p100407/",
+            "系统工程师&&https://www.zhipin.com/c101280100-p100404/",
+            "运维开发工程师&&https://www.zhipin.com/c101280100-p100402/",
+            "系统管理员&&https://www.zhipin.com/c101280100-p100406/",
+            "DBA&&https://www.zhipin.com/c101280100-p100409/",
+            "系统安全&&https://www.zhipin.com/c101280100-p100408/",
+            "技术文档工程师&&https://www.zhipin.com/c101280100-p100410/"
+        ],
+        "人工智能": [
+            "图像算法&&https://www.zhipin.com/c101280100-p101306/",
+            "自然语言处理算法&&https://www.zhipin.com/c101280100-p100117/",
+            "大模型算法&&https://www.zhipin.com/c101280100-p101310/",
+            "数据挖掘&&https://www.zhipin.com/c101280100-p100104/",
+            "规控算法&&https://www.zhipin.com/c101280100-p101311/",
+            "SLAM算法&&https://www.zhipin.com/c101280100-p101312/",
+            "推荐算法&&https://www.zhipin.com/c101280100-p100118/",
+            "搜索算法&&https://www.zhipin.com/c101280100-p100115/",
+            "语音算法&&https://www.zhipin.com/c101280100-p101305/",
+            "风控算法&&https://www.zhipin.com/c101280100-p101309/",
+            "算法研究员&&https://www.zhipin.com/c101280100-p101307/",
+            "算法工程师&&https://www.zhipin.com/c101280100-p100120/",
+            "机器学习&&https://www.zhipin.com/c101280100-p101301/",
+            "深度学习&&https://www.zhipin.com/c101280100-p101302/",
+            "自动驾驶系统工程师&&https://www.zhipin.com/c101280100-p101308/",
+            "数据标注/AI训练师&&https://www.zhipin.com/c101280100-p130121/"
+        ],
+        "销售技术支持": [
+            "售前技术支持&&https://www.zhipin.com/c101280100-p101201/",
+            "售后技术支持&&https://www.zhipin.com/c101280100-p101202/",
+            "销售技术支持&&https://www.zhipin.com/c101280100-p101299/",
+            "客户成功&&https://www.zhipin.com/c101280100-p160303/"
+        ],
+        "数据": [
+            "数据分析师&&https://www.zhipin.com/c101280100-p100511/",
+            "数据开发&&https://www.zhipin.com/c101280100-p100508/",
+            "数据仓库&&https://www.zhipin.com/c101280100-p100507/",
+            "ETL工程师&&https://www.zhipin.com/c101280100-p100506/",
+            "数据挖掘&&https://www.zhipin.com/c101280100-p100104/",
+            "数据架构师&&https://www.zhipin.com/c101280100-p100512/",
+            "爬虫工程师&&https://www.zhipin.com/c101280100-p100514/",
+            "数据采集&&https://www.zhipin.com/c101280100-p100122/"
+        ],
+        "技术项目管理": [
+            "项目经理/主管&&https://www.zhipin.com/c101280100-p100601/",
+            "项目助理&&https://www.zhipin.com/c101280100-p100603/",
+            "项目专员&&https://www.zhipin.com/c101280100-p100604/",
+            "实施工程师&&https://www.zhipin.com/c101280100-p100606/",
+            "实施顾问&&https://www.zhipin.com/c101280100-p100605/",
+            "需求分析工程师&&https://www.zhipin.com/c101280100-p100607/",
+            "硬件项目经理&&https://www.zhipin.com/c101280100-p100817/"
+        ],
+        "高端技术职位": [
+            "技术经理&&https://www.zhipin.com/c101280100-p100701/",
+            "架构师&&https://www.zhipin.com/c101280100-p100704/",
+            "技术总监&&https://www.zhipin.com/c101280100-p100702/",
+            "CTO/CIO&&https://www.zhipin.com/c101280100-p100705/",
+            "技术合伙人&&https://www.zhipin.com/c101280100-p100707/",
+            "运维总监&&https://www.zhipin.com/c101280100-p100706/"
+        ],
+        "其他技术职位": [
+            "其他技术职位&&https://www.zhipin.com/c101280100-p101101/"
+        ]
+    },
+    "电子/电气/通信": {
+        "电子/硬件开发": [
+            "电子工程师&&https://www.zhipin.com/c101280100-p101401/",
+            "硬件工程师&&https://www.zhipin.com/c101280100-p100801/",
+            "嵌入式软件工程师&&https://www.zhipin.com/c101280100-p100802/",
+            "FPGA开发&&https://www.zhipin.com/c101280100-p100808/",
+            "单片机&&https://www.zhipin.com/c101280100-p100804/",
+            "驱动开发工程师&&https://www.zhipin.com/c101280100-p100806/",
+            "PCB工程师&&https://www.zhipin.com/c101280100-p100811/",
+            "电子维修技术员&&https://www.zhipin.com/c101280100-p101408/",
+            "射频工程师&&https://www.zhipin.com/c101280100-p100816/",
+            "电路设计&&https://www.zhipin.com/c101280100-p100805/",
+            "系统集成&&https://www.zhipin.com/c101280100-p100807/",
+            "光学工程师&&https://www.zhipin.com/c101280100-p100818/",
+            "DSP开发&&https://www.zhipin.com/c101280100-p100809/",
+            "ARM开发&&https://www.zhipin.com/c101280100-p100810/"
+        ],
+        "半导体/芯片": [
+            "集成电路IC设计&&https://www.zhipin.com/c101280100-p101405/",
+            "数字IC验证工程师&&https://www.zhipin.com/c101280100-p101406/",
+            "模拟版图设计工程师&&https://www.zhipin.com/c101280100-p101407/",
+            "芯片测试工程师&&https://www.zhipin.com/c101280100-p101409/",
+            "DFT工程师&&https://www.zhipin.com/c101280100-p101410/",
+            "FAE&&https://www.zhipin.com/c101280100-p101403/",
+            "数字前端设计师&&https://www.zhipin.com/c101280100-p101411/",
+            "数字后端工程师&&https://www.zhipin.com/c101280100-p101412/",
+            "模拟IC设计工程师&&https://www.zhipin.com/c101280100-p101413/"
+        ],
+        "电气/自动化": [
+            "电气工程师&&https://www.zhipin.com/c101280100-p101402/",
+            "电气设计工程师&&https://www.zhipin.com/c101280100-p101404/",
+            "自动化&&https://www.zhipin.com/c101280100-p100803/",
+            "机电工程师&&https://www.zhipin.com/c101280100-p300310/",
+            "建筑机电工程师&&https://www.zhipin.com/c101280100-p220223/"
+        ],
+        "技术项目管理": [
+            "项目经理/主管&&https://www.zhipin.com/c101280100-p100601/",
+            "项目助理&&https://www.zhipin.com/c101280100-p100603/",
+            "项目专员&&https://www.zhipin.com/c101280100-p100604/",
+            "实施工程师&&https://www.zhipin.com/c101280100-p100606/",
+            "实施顾问&&https://www.zhipin.com/c101280100-p100605/",
+            "需求分析工程师&&https://www.zhipin.com/c101280100-p100607/",
+            "硬件项目经理&&https://www.zhipin.com/c101280100-p100817/"
+        ],
+        "通信": [
+            "通信项目专员&&https://www.zhipin.com/c101280100-p101011/",
+            "通信项目经理&&https://www.zhipin.com/c101280100-p101012/",
+            "通信技术工程师&&https://www.zhipin.com/c101280100-p101001/",
+            "通信研发工程师&&https://www.zhipin.com/c101280100-p101002/",
+            "无线/射频通信工程师&&https://www.zhipin.com/c101280100-p101008/",
+            "移动通信工程师&&https://www.zhipin.com/c101280100-p101004/",
+            "电信网络工程师&&https://www.zhipin.com/c101280100-p101005/",
+            "数据通信工程师&&https://www.zhipin.com/c101280100-p101003/",
+            "通信测试工程师&&https://www.zhipin.com/c101280100-p101014/",
+            "光通信工程师&&https://www.zhipin.com/c101280100-p101016/",
+            "光网络工程师&&https://www.zhipin.com/c101280100-p101018/",
+            "通信电源工程师&&https://www.zhipin.com/c101280100-p101009/",
+            "有线传输工程师&&https://www.zhipin.com/c101280100-p101007/",
+            "通信设备工程师&&https://www.zhipin.com/c101280100-p101015/",
+            "核心网工程师&&https://www.zhipin.com/c101280100-p101013/",
+            "通信标准化工程师&&https://www.zhipin.com/c101280100-p101010/",
+            "网络工程师&&https://www.zhipin.com/c101280100-p100403/"
+        ],
+        "销售技术支持": [
+            "售前技术支持&&https://www.zhipin.com/c101280100-p101201/",
+            "售后技术支持&&https://www.zhipin.com/c101280100-p101202/",
+            "销售技术支持&&https://www.zhipin.com/c101280100-p101299/"
+        ],
+        "运维/技术支持": [
+            "运维工程师&&https://www.zhipin.com/c101280100-p100401/",
+            "系统工程师&&https://www.zhipin.com/c101280100-p100404/",
+            "技术文档工程师&&https://www.zhipin.com/c101280100-p100410/"
+        ]
+    },
+    "产品": {
+        "产品经理": [
+            "产品经理&&https://www.zhipin.com/c101280100-p110101/",
+            "产品专员/助理&&https://www.zhipin.com/c101280100-p110108/",
+            "高级产品管理岗&&https://www.zhipin.com/c101280100-p110302/",
+            "电商产品经理&&https://www.zhipin.com/c101280100-p110106/",
+            "AI产品经理&&https://www.zhipin.com/c101280100-p110110/",
+            "数据产品经理&&https://www.zhipin.com/c101280100-p110105/",
+            "移动产品经理&&https://www.zhipin.com/c101280100-p110103/",
+            "金融产品经理&&https://www.zhipin.com/c101280100-p180501/",
+            "亚马逊产品开发&&https://www.zhipin.com/c101280100-p130133/",
+            "化妆品产品经理&&https://www.zhipin.com/c101280100-p110111/",
+            "硬件产品经理&&https://www.zhipin.com/c101280100-p110109/",
+            "其他产品职位&&https://www.zhipin.com/c101280100-p110401/"
+        ],
+        "游戏策划/制作": [
+            "游戏策划&&https://www.zhipin.com/c101280100-p110107/",
+            "系统策划&&https://www.zhipin.com/c101280100-p120305/",
+            "游戏数值策划&&https://www.zhipin.com/c101280100-p120303/",
+            "游戏制作人&&https://www.zhipin.com/c101280100-p110303/"
+        ],
+        "用户研究": [
+            "用户研究员&&https://www.zhipin.com/c101280100-p120302/",
+            "用户研究经理&&https://www.zhipin.com/c101280100-p120407/",
+            "用户研究总监&&https://www.zhipin.com/c101280100-p120408/"
+        ]
+    },
+    "客服/运营": {
+        "客服": [
+            "客服专员&&https://www.zhipin.com/c101280100-p130305/",
+            "客服主管&&https://www.zhipin.com/c101280100-p130306/",
+            "客服经理&&https://www.zhipin.com/c101280100-p130304/",
+            "网络客服&&https://www.zhipin.com/c101280100-p130303/",
+            "电话客服&&https://www.zhipin.com/c101280100-p130308/",
+            "售后客服&&https://www.zhipin.com/c101280100-p130302/",
+            "售前客服&&https://www.zhipin.com/c101280100-p130301/"
+        ],
+        "内容运营": [
+            "新媒体运营&&https://www.zhipin.com/c101280100-p130111/",
+            "直播运营&&https://www.zhipin.com/c101280100-p130122/",
+            "视频运营&&https://www.zhipin.com/c101280100-p170108/",
+            "内容运营&&https://www.zhipin.com/c101280100-p130104/",
+            "微信运营&&https://www.zhipin.com/c101280100-p130113/"
+        ],
+        "电商运营": [
+            "国内电商运营&&https://www.zhipin.com/c101280100-p130117/",
+            "跨境电商运营&&https://www.zhipin.com/c101280100-p130124/",
+            "品类运营&&https://www.zhipin.com/c101280100-p130107/",
+            "淘宝运营&&https://www.zhipin.com/c101280100-p130126/",
+            "天猫运营&&https://www.zhipin.com/c101280100-p130127/",
+            "京东运营&&https://www.zhipin.com/c101280100-p130128/",
+            "拼多多运营&&https://www.zhipin.com/c101280100-p130129/",
+            "亚马逊运营&&https://www.zhipin.com/c101280100-p130130/",
+            "亚马逊产品开发&&https://www.zhipin.com/c101280100-p130133/",
+            "阿里国际站运营&&https://www.zhipin.com/c101280100-p130132/",
+            "速卖通运营&&https://www.zhipin.com/c101280100-p130131/"
+        ],
+        "业务运营": [
+            "运营助理/专员&&https://www.zhipin.com/c101280100-p130118/",
+            "产品运营&&https://www.zhipin.com/c101280100-p130102/",
+            "用户运营&&https://www.zhipin.com/c101280100-p130101/",
+            "商家运营&&https://www.zhipin.com/c101280100-p130106/",
+            "数据/策略运营&&https://www.zhipin.com/c101280100-p130103/",
+            "社区运营&&https://www.zhipin.com/c101280100-p130112/",
+            "游戏运营&&https://www.zhipin.com/c101280100-p130108/",
+            "活动运营&&https://www.zhipin.com/c101280100-p130105/",
+            "网站运营&&https://www.zhipin.com/c101280100-p130110/",
+            "内容审核&&https://www.zhipin.com/c101280100-p130120/",
+            "数据标注/AI训练师&&https://www.zhipin.com/c101280100-p130121/"
+        ],
+        "线下运营": [
+            "车辆运营&&https://www.zhipin.com/c101280100-p130123/",
+            "线下拓展运营&&https://www.zhipin.com/c101280100-p130116/",
+            "商场运营&&https://www.zhipin.com/c101280100-p290314/"
+        ],
+        "编辑": [
+            "文案编辑&&https://www.zhipin.com/c101280100-p130203/",
+            "网站编辑&&https://www.zhipin.com/c101280100-p130204/",
+            "医学编辑&&https://www.zhipin.com/c101280100-p210101/",
+            "主编/副主编&&https://www.zhipin.com/c101280100-p130201/"
+        ],
+        "高端运营职位": [
+            "运营经理/主管&&https://www.zhipin.com/c101280100-p130405/",
+            "运营总监&&https://www.zhipin.com/c101280100-p130402/",
+            "COO&&https://www.zhipin.com/c101280100-p130403/",
+            "客服总监&&https://www.zhipin.com/c101280100-p130404/"
+        ],
+        "其他运营职位": [
+            "其他运营职位&&https://www.zhipin.com/c101280100-p130501/"
+        ]
+    },
+    "销售": {
+        "销售": [
+            "销售专员&&https://www.zhipin.com/c101280100-p140301/",
+            "电话销售&&https://www.zhipin.com/c101280100-p140310/",
+            "网络销售&&https://www.zhipin.com/c101280100-p140314/",
+            "渠道销售&&https://www.zhipin.com/c101280100-p140307/",
+            "大客户代表&&https://www.zhipin.com/c101280100-p140304/",
+            "客户经理&&https://www.zhipin.com/c101280100-p140317/",
+            "BD经理&&https://www.zhipin.com/c101280100-p140305/",
+            "客户代表&&https://www.zhipin.com/c101280100-p140303/",
+            "销售工程师&&https://www.zhipin.com/c101280100-p140316/"
+        ],
+        "销售管理": [
+            "销售经理&&https://www.zhipin.com/c101280100-p140302/",
+            "销售总监&&https://www.zhipin.com/c101280100-p140402/",
+            "销售VP&&https://www.zhipin.com/c101280100-p160103/",
+            "团队经理&&https://www.zhipin.com/c101280100-p160104/",
+            "城市经理&&https://www.zhipin.com/c101280100-p160102/",
+            "区域总监&&https://www.zhipin.com/c101280100-p160101/"
+        ],
+        "销售行政/商务": [
+            "销售助理&&https://www.zhipin.com/c101280100-p140309/",
+            "销售运营&&https://www.zhipin.com/c101280100-p130119/",
+            "商务专员&&https://www.zhipin.com/c101280100-p160301/",
+            "商务经理&&https://www.zhipin.com/c101280100-p160302/",
+            "商务总监&&https://www.zhipin.com/c101280100-p140403/",
+            "客户成功&&https://www.zhipin.com/c101280100-p160303/"
+        ],
+        "外贸销售": [
+            "外贸业务员&&https://www.zhipin.com/c101280100-p250203/",
+            "外贸经理&&https://www.zhipin.com/c101280100-p250201/"
+        ],
+        "课程销售": [
+            "课程顾问&&https://www.zhipin.com/c101280100-p190601/",
+            "招生顾问&&https://www.zhipin.com/c101280100-p190602/",
+            "留学顾问&&https://www.zhipin.com/c101280100-p190603/"
+        ],
+        "汽车销售": [
+            "汽车销售&&https://www.zhipin.com/c101280100-p230201/",
+            "汽车配件销售&&https://www.zhipin.com/c101280100-p230202/",
+            "二手车评估师&&https://www.zhipin.com/c101280100-p230207/"
+        ],
+        "房地产销售/招商": [
+            "置业顾问&&https://www.zhipin.com/c101280100-p160401/",
+            "地产中介&&https://www.zhipin.com/c101280100-p160403/",
+            "物业招商管理&&https://www.zhipin.com/c101280100-p220403/",
+            "房地产销售总监&&https://www.zhipin.com/c101280100-p220505/"
+        ],
+        "服务业销售": [
+            "服装导购&&https://www.zhipin.com/c101280100-p160501/",
+            "珠宝销售&&https://www.zhipin.com/c101280100-p290312/",
+            "美容顾问&&https://www.zhipin.com/c101280100-p210414/",
+            "化妆品导购&&https://www.zhipin.com/c101280100-p210406/",
+            "会籍顾问&&https://www.zhipin.com/c101280100-p210610/",
+            "瘦身顾问&&https://www.zhipin.com/c101280100-p210602/",
+            "旅游顾问&&https://www.zhipin.com/c101280100-p280103/"
+        ],
+        "医疗销售": [
+            "医药代表&&https://www.zhipin.com/c101280100-p210502/",
+            "医疗器械销售&&https://www.zhipin.com/c101280100-p210506/",
+            "药店店员&&https://www.zhipin.com/c101280100-p210803/",
+            "药店店长&&https://www.zhipin.com/c101280100-p210801/",
+            "医美咨询&&https://www.zhipin.com/c101280100-p210505/",
+            "健康顾问&&https://www.zhipin.com/c101280100-p210504/",
+            "口腔咨询师&&https://www.zhipin.com/c101280100-p210507/"
+        ],
+        "广告/会展销售": [
+            "广告销售&&https://www.zhipin.com/c101280100-p140313/",
+            "会展活动销售&&https://www.zhipin.com/c101280100-p140504/",
+            "会议活动销售&&https://www.zhipin.com/c101280100-p140501/"
+        ],
+        "金融销售": [
+            "理财顾问&&https://www.zhipin.com/c101280100-p180506/",
+            "保险顾问&&https://www.zhipin.com/c101280100-p180701/",
+            "信用卡销售&&https://www.zhipin.com/c101280100-p180401/",
+            "证券经纪人&&https://www.zhipin.com/c101280100-p180801/"
+        ],
+        "其他销售职位": [
+            "其他销售职位&&https://www.zhipin.com/c101280100-p160201/"
+        ]
+    },
+    "人力/行政/法务": {
+        "人力资源": [
+            "人力资源专员/助理&&https://www.zhipin.com/c101280100-p150104/",
+            "人力资源经理/主管&&https://www.zhipin.com/c101280100-p150403/",
+            "人力资源总监&&https://www.zhipin.com/c101280100-p150108/",
+            "招聘&&https://www.zhipin.com/c101280100-p150102/",
+            "HRBP&&https://www.zhipin.com/c101280100-p150103/",
+            "培训&&https://www.zhipin.com/c101280100-p150105/",
+            "员工关系&&https://www.zhipin.com/c101280100-p150109/",
+            "组织发展&&https://www.zhipin.com/c101280100-p150110/",
+            "企业文化&&https://www.zhipin.com/c101280100-p150111/",
+            "薪酬绩效&&https://www.zhipin.com/c101280100-p150106/",
+            "猎头顾问&&https://www.zhipin.com/c101280100-p260108/"
+        ],
+        "行政": [
+            "行政专员/助理&&https://www.zhipin.com/c101280100-p150201/",
+            "行政经理/主管&&https://www.zhipin.com/c101280100-p150401/",
+            "行政总监&&https://www.zhipin.com/c101280100-p150209/",
+            "前台&&https://www.zhipin.com/c101280100-p150202/",
+            "后勤&&https://www.zhipin.com/c101280100-p150207/",
+            "经理助理&&https://www.zhipin.com/c101280100-p150205/",
+            "文员&&https://www.zhipin.com/c101280100-p150210/",
+            "企业党建&&https://www.zhipin.com/c101280100-p140802/",
+            "档案管理&&https://www.zhipin.com/c101280100-p150211/",
+            "商务司机&&https://www.zhipin.com/c101280100-p150208/"
+        ],
+        "法律服务": [
+            "法务专员/助理&&https://www.zhipin.com/c101280100-p150203/",
+            "法务经理/主管&&https://www.zhipin.com/c101280100-p150506/",
+            "法务总监&&https://www.zhipin.com/c101280100-p150507/",
+            "法律顾问&&https://www.zhipin.com/c101280100-p150504/",
+            "律师&&https://www.zhipin.com/c101280100-p150502/"
+        ],
+        "其他职能职位": [
+            "其他职能职位&&https://www.zhipin.com/c101280100-p150601/"
+        ]
+    },
+    "财务/审计/税务": {
+        "会计": [
+            "会计&&https://www.zhipin.com/c101280100-p150301/",
+            "总账会计&&https://www.zhipin.com/c101280100-p150311/",
+            "成本会计&&https://www.zhipin.com/c101280100-p150310/",
+            "结算会计&&https://www.zhipin.com/c101280100-p150304/",
+            "税务外勤会计&&https://www.zhipin.com/c101280100-p150313/",
+            "建筑/工程会计&&https://www.zhipin.com/c101280100-p150312/"
+        ],
+        "审计/税务": [
+            "审计&&https://www.zhipin.com/c101280100-p150306/",
+            "税务&&https://www.zhipin.com/c101280100-p150305/"
+        ],
+        "高级财务职位": [
+            "财务经理/主管&&https://www.zhipin.com/c101280100-p150402/",
+            "财务总监/VP&&https://www.zhipin.com/c101280100-p150308/",
+            "CFO&&https://www.zhipin.com/c101280100-p150404/"
+        ],
+        "其他财务岗位": [
+            "出纳&&https://www.zhipin.com/c101280100-p150302/",
+            "风控&&https://www.zhipin.com/c101280100-p150307/",
+            "财务顾问&&https://www.zhipin.com/c101280100-p150303/",
+            "统计员&&https://www.zhipin.com/c101280100-p150314/",
+            "财务分析/财务BP&&https://www.zhipin.com/c101280100-p150316/"
+        ]
+    },
+    "生产制造": {
+        "普工": [
+            "普工/操作工&&https://www.zhipin.com/c101280100-p300601/",
+            "包装工&&https://www.zhipin.com/c101280100-p300624/",
+            "学徒工&&https://www.zhipin.com/c101280100-p300628/",
+            "搬运工/装卸工&&https://www.zhipin.com/c101280100-p300630/",
+            "组装工&&https://www.zhipin.com/c101280100-p300623/"
+        ],
+        "机械加工": [
+            "焊工&&https://www.zhipin.com/c101280100-p300604/",
+            "氩弧焊工&&https://www.zhipin.com/c101280100-p300605/",
+            "车工&&https://www.zhipin.com/c101280100-p300610/",
+            "钳工&&https://www.zhipin.com/c101280100-p300613/",
+            "切割工&&https://www.zhipin.com/c101280100-p300631/",
+            "钣金工&&https://www.zhipin.com/c101280100-p300616/",
+            "注塑工&&https://www.zhipin.com/c101280100-p300622/",
+            "折弯工&&https://www.zhipin.com/c101280100-p300619/",
+            "磨工&&https://www.zhipin.com/c101280100-p300611/",
+            "模具工&&https://www.zhipin.com/c101280100-p300633/",
+            "铣工&&https://www.zhipin.com/c101280100-p300612/",
+            "抛光工&&https://www.zhipin.com/c101280100-p300617/",
+            "喷塑工&&https://www.zhipin.com/c101280100-p300621/",
+            "钻工&&https://www.zhipin.com/c101280100-p300614/",
+            "铆工&&https://www.zhipin.com/c101280100-p300615/",
+            "电镀工&&https://www.zhipin.com/c101280100-p300620/"
+        ],
+        "技工": [
+            "电工&&https://www.zhipin.com/c101280100-p300606/",
+            "弱电工&&https://www.zhipin.com/c101280100-p300635/",
+            "机修工&&https://www.zhipin.com/c101280100-p300618/",
+            "木工&&https://www.zhipin.com/c101280100-p300608/",
+            "油漆工&&https://www.zhipin.com/c101280100-p300609/",
+            "锅炉工&&https://www.zhipin.com/c101280100-p300627/"
+        ],
+        "运输设备操作": [
+            "叉车工&&https://www.zhipin.com/c101280100-p300602/",
+            "铲车司机&&https://www.zhipin.com/c101280100-p300603/",
+            "挖掘机司机&&https://www.zhipin.com/c101280100-p300634/"
+        ],
+        "质量管理": [
+            "质量管理/测试&&https://www.zhipin.com/c101280100-p300201/",
+            "质检员&&https://www.zhipin.com/c101280100-p300208/",
+            "实验室技术员&&https://www.zhipin.com/c101280100-p300402/",
+            "体系工程师&&https://www.zhipin.com/c101280100-p300205/",
+            "体系审核员&&https://www.zhipin.com/c101280100-p300206/",
+            "产品认证工程师&&https://www.zhipin.com/c101280100-p300204/",
+            "失效分析工程师&&https://www.zhipin.com/c101280100-p300203/",
+            "可靠度工程师&&https://www.zhipin.com/c101280100-p300202/",
+            "供应商质量工程师&&https://www.zhipin.com/c101280100-p250108/",
+            "医疗器械生产/质量管理&&https://www.zhipin.com/c101280100-p210122/",
+            "汽车质量工程师&&https://www.zhipin.com/c101280100-p230109/",
+            "计量工程师&&https://www.zhipin.com/c101280100-p300209/"
+        ],
+        "机械设计/制造": [
+            "CNC/数控&&https://www.zhipin.com/c101280100-p300311/",
+            "机械工程师&&https://www.zhipin.com/c101280100-p300301/",
+            "机械结构工程师&&https://www.zhipin.com/c101280100-p300306/",
+            "工艺工程师&&https://www.zhipin.com/c101280100-p300308/",
+            "机械设备工程师&&https://www.zhipin.com/c101280100-p300303/",
+            "模具工程师&&https://www.zhipin.com/c101280100-p300314/",
+            "机械制图员&&https://www.zhipin.com/c101280100-p300305/",
+            "机电工程师&&https://www.zhipin.com/c101280100-p300310/",
+            "注塑工程师&&https://www.zhipin.com/c101280100-p300316/",
+            "夹具工程师&&https://www.zhipin.com/c101280100-p300313/",
+            "冲压工程师&&https://www.zhipin.com/c101280100-p300312/",
+            "铸造/锻造工程师&&https://www.zhipin.com/c101280100-p300317/",
+            "机械维修/保养&&https://www.zhipin.com/c101280100-p300304/",
+            "材料工程师&&https://www.zhipin.com/c101280100-p300309/",
+            "工业工程师(IE)&&https://www.zhipin.com/c101280100-p300307/",
+            "焊接工程师&&https://www.zhipin.com/c101280100-p300315/",
+            "热设计工程师&&https://www.zhipin.com/c101280100-p100813/",
+            "液压工程师&&https://www.zhipin.com/c101280100-p300318/"
+        ],
+        "电气/自动化": [
+            "电气工程师&&https://www.zhipin.com/c101280100-p101402/",
+            "电气设计工程师&&https://www.zhipin.com/c101280100-p101404/",
+            "自动化&&https://www.zhipin.com/c101280100-p100803/"
+        ],
+        "生产营运": [
+            "车间主任&&https://www.zhipin.com/c101280100-p300103/",
+            "生产组长/拉长&&https://www.zhipin.com/c101280100-p300104/",
+            "生产总监&&https://www.zhipin.com/c101280100-p300102/",
+            "厂长&&https://www.zhipin.com/c101280100-p300101/",
+            "生产跟单/文员&&https://www.zhipin.com/c101280100-p300108/",
+            "生产计划/物料管理(PMC)&&https://www.zhipin.com/c101280100-p300107/",
+            "生产设备管理员&&https://www.zhipin.com/c101280100-p300106/",
+            "厂务&&https://www.zhipin.com/c101280100-p300110/"
+        ],
+        "生产安全": [
+            "生产安全员&&https://www.zhipin.com/c101280100-p300207/",
+            "施工安全员&&https://www.zhipin.com/c101280100-p220225/",
+            "EHS工程师&&https://www.zhipin.com/c101280100-p300903/",
+            "安全评价师&&https://www.zhipin.com/c101280100-p300210/"
+        ],
+        "化工": [
+            "实验室技术员&&https://www.zhipin.com/c101280100-p300402/",
+            "化工工程师&&https://www.zhipin.com/c101280100-p300401/",
+            "食品/饮料研发&&https://www.zhipin.com/c101280100-p300406/",
+            "化妆品研发&&https://www.zhipin.com/c101280100-p300405/",
+            "化妆品产品经理&&https://www.zhipin.com/c101280100-p110111/",
+            "涂料研发&&https://www.zhipin.com/c101280100-p300404/",
+            "化工项目经理&&https://www.zhipin.com/c101280100-p300407/"
+        ],
+        "服装/纺织/皮革": [
+            "服装/纺织/皮革跟单&&https://www.zhipin.com/c101280100-p300510/",
+            "打样/制版&&https://www.zhipin.com/c101280100-p300509/",
+            "服装/纺织设计&&https://www.zhipin.com/c101280100-p300501/",
+            "面料辅料开发&&https://www.zhipin.com/c101280100-p300507/",
+            "缝纫工&&https://www.zhipin.com/c101280100-p300629/",
+            "样衣工&&https://www.zhipin.com/c101280100-p300632/",
+            "量体师&&https://www.zhipin.com/c101280100-p300511/",
+            "裁剪工&&https://www.zhipin.com/c101280100-p300637/"
+        ],
+        "新能源汽车": [
+            "电池工程师&&https://www.zhipin.com/c101280100-p300801/",
+            "电机工程师&&https://www.zhipin.com/c101280100-p300802/"
+        ],
+        "汽车研发/制造": [
+            "车身/造型设计&&https://www.zhipin.com/c101280100-p230102/",
+            "汽车电子工程师&&https://www.zhipin.com/c101280100-p230106/",
+            "自动驾驶系统工程师&&https://www.zhipin.com/c101280100-p101308/",
+            "线束设计&&https://www.zhipin.com/c101280100-p300803/",
+            "内外饰设计工程师&&https://www.zhipin.com/c101280100-p230110/",
+            "动力系统工程师&&https://www.zhipin.com/c101280100-p230105/",
+            "底盘工程师&&https://www.zhipin.com/c101280100-p230103/",
+            "汽车零部件设计&&https://www.zhipin.com/c101280100-p230107/",
+            "汽车设计&&https://www.zhipin.com/c101280100-p230101/",
+            "汽车质量工程师&&https://www.zhipin.com/c101280100-p230109/",
+            "总装工程师&&https://www.zhipin.com/c101280100-p230210/",
+            "汽车项目管理&&https://www.zhipin.com/c101280100-p230108/"
+        ],
+        "环保": [
+            "EHS工程师&&https://www.zhipin.com/c101280100-p300903/",
+            "环境采样/检测员&&https://www.zhipin.com/c101280100-p300905/",
+            "环评工程师&&https://www.zhipin.com/c101280100-p300902/",
+            "环保工程师&&https://www.zhipin.com/c101280100-p300901/",
+            "碳排放管理师&&https://www.zhipin.com/c101280100-p300904/"
+        ],
+        "其他生产制造职位": [
+            "其他生产制造职位&&https://www.zhipin.com/c101280100-p300701/"
+        ]
+    },
+    "零售/生活服务": {
+        "零售": [
+            "店员/营业员&&https://www.zhipin.com/c101280100-p290303/",
+            "收银&&https://www.zhipin.com/c101280100-p290201/",
+            "导购&&https://www.zhipin.com/c101280100-p290302/",
+            "服装导购&&https://www.zhipin.com/c101280100-p160501/",
+            "珠宝销售&&https://www.zhipin.com/c101280100-p290312/",
+            "化妆品导购&&https://www.zhipin.com/c101280100-p210406/",
+            "理货员&&https://www.zhipin.com/c101280100-p290307/",
+            "促销员&&https://www.zhipin.com/c101280100-p290311/",
+            "陈列员&&https://www.zhipin.com/c101280100-p290306/",
+            "防损员&&https://www.zhipin.com/c101280100-p290308/",
+            "门店店长&&https://www.zhipin.com/c101280100-p290304/",
+            "储备店长&&https://www.zhipin.com/c101280100-p290226/",
+            "督导/巡店&&https://www.zhipin.com/c101280100-p290305/",
+            "卖场经理&&https://www.zhipin.com/c101280100-p290309/",
+            "商场运营&&https://www.zhipin.com/c101280100-p290314/"
+        ],
+        "美容美发": [
+            "美容师&&https://www.zhipin.com/c101280100-p210405/",
+            "美容店长&&https://www.zhipin.com/c101280100-p210410/",
+            "美体师&&https://www.zhipin.com/c101280100-p210408/",
+            "美容顾问&&https://www.zhipin.com/c101280100-p210414/",
+            "美容导师&&https://www.zhipin.com/c101280100-p290802/",
+            "美甲美睫师&&https://www.zhipin.com/c101280100-p210608/",
+            "纹绣师&&https://www.zhipin.com/c101280100-p210407/",
+            "发型师&&https://www.zhipin.com/c101280100-p210607/",
+            "美发助理/学徒&&https://www.zhipin.com/c101280100-p210409/",
+            "养发师&&https://www.zhipin.com/c101280100-p290801/",
+            "瘦身顾问&&https://www.zhipin.com/c101280100-p210602/",
+            "化妆/造型师&&https://www.zhipin.com/c101280100-p210609/"
+        ],
+        "理疗保健": [
+            "理疗师&&https://www.zhipin.com/c101280100-p210403/",
+            "针灸推拿&&https://www.zhipin.com/c101280100-p210404/",
+            "按摩师&&https://www.zhipin.com/c101280100-p210412/",
+            "足疗师&&https://www.zhipin.com/c101280100-p210411/",
+            "采耳师&&https://www.zhipin.com/c101280100-p210415/"
+        ],
+        "安保服务": [
+            "保安&&https://www.zhipin.com/c101280100-p290105/",
+            "保安经理&&https://www.zhipin.com/c101280100-p290117/",
+            "消防中控员&&https://www.zhipin.com/c101280100-p290121/",
+            "押运员&&https://www.zhipin.com/c101280100-p290120/",
+            "安检员&&https://www.zhipin.com/c101280100-p290112/",
+            "消防维保员&&https://www.zhipin.com/c101280100-p290123/"
+        ],
+        "家政保洁/维修": [
+            "保洁&&https://www.zhipin.com/c101280100-p290106/",
+            "保洁经理&&https://www.zhipin.com/c101280100-p290122/",
+            "保姆&&https://www.zhipin.com/c101280100-p290108/",
+            "月嫂&&https://www.zhipin.com/c101280100-p290109/",
+            "产后康复师&&https://www.zhipin.com/c101280100-p290118/",
+            "育婴师&&https://www.zhipin.com/c101280100-p290110/",
+            "护工&&https://www.zhipin.com/c101280100-p290111/",
+            "收纳师&&https://www.zhipin.com/c101280100-p290169/",
+            "家电维修&&https://www.zhipin.com/c101280100-p290114/",
+            "手机维修&&https://www.zhipin.com/c101280100-p290113/",
+            "电脑/打印机维修&&https://www.zhipin.com/c101280100-p290166/"
+        ],
+        "汽车服务": [
+            "汽车维修&&https://www.zhipin.com/c101280100-p230204/",
+            "汽车美容&&https://www.zhipin.com/c101280100-p230205/",
+            "洗车工&&https://www.zhipin.com/c101280100-p230213/",
+            "汽车改装&&https://www.zhipin.com/c101280100-p230209/",
+            "汽车服务顾问&&https://www.zhipin.com/c101280100-p230203/",
+            "4S店店长/维修站长&&https://www.zhipin.com/c101280100-p230208/",
+            "汽车查勘定损&&https://www.zhipin.com/c101280100-p230206/",
+            "加油员&&https://www.zhipin.com/c101280100-p230214/"
+        ],
+        "宠物服务": [
+            "宠物美容&&https://www.zhipin.com/c101280100-p290601/",
+            "宠物医生&&https://www.zhipin.com/c101280100-p290602/"
+        ],
+        "运动健身": [
+            "健身教练&&https://www.zhipin.com/c101280100-p190705/",
+            "舞蹈老师&&https://www.zhipin.com/c101280100-p190701/",
+            "体育教师/体育教练&&https://www.zhipin.com/c101280100-p190312/",
+            "篮球教练&&https://www.zhipin.com/c101280100-p190706/",
+            "瑜伽老师&&https://www.zhipin.com/c101280100-p190702/",
+            "游泳教练&&https://www.zhipin.com/c101280100-p190704/",
+            "跆拳道教练&&https://www.zhipin.com/c101280100-p190707/",
+            "武术教练&&https://www.zhipin.com/c101280100-p190708/",
+            "轮滑教练&&https://www.zhipin.com/c101280100-p190709/",
+            "救生员&&https://www.zhipin.com/c101280100-p210613/",
+            "乒乓球教练&&https://www.zhipin.com/c101280100-p190719/",
+            "足球教练&&https://www.zhipin.com/c101280100-p190766/",
+            "羽毛球教练&&https://www.zhipin.com/c101280100-p190720/",
+            "拳击教练&&https://www.zhipin.com/c101280100-p190769/"
+        ],
+        "驾驶员": [
+            "网约车司机&&https://www.zhipin.com/c101280100-p240305/",
+            "代驾司机&&https://www.zhipin.com/c101280100-p240306/",
+            "驾校教练&&https://www.zhipin.com/c101280100-p240307/",
+            "商务司机&&https://www.zhipin.com/c101280100-p150208/",
+            "货运司机&&https://www.zhipin.com/c101280100-p240301/",
+            "客运司机&&https://www.zhipin.com/c101280100-p240308/",
+            "无人机飞手&&https://www.zhipin.com/c101280100-p100311/"
+        ],
+        "其他服务业职位": [
+            "花艺师&&https://www.zhipin.com/c101280100-p290701/",
+            "婚礼策划&&https://www.zhipin.com/c101280100-p290702/",
+            "网吧网管&&https://www.zhipin.com/c101280100-p290313/",
+            "会籍顾问&&https://www.zhipin.com/c101280100-p210610/",
+            "旅游顾问&&https://www.zhipin.com/c101280100-p280103/",
+            "验光师&&https://www.zhipin.com/c101280100-p210109/",
+            "摄影/摄像师&&https://www.zhipin.com/c101280100-p170602/",
+            "剧本杀主持人&&https://www.zhipin.com/c101280100-p170626/",
+            "儿童引导师&&https://www.zhipin.com/c101280100-p170628/",
+            "放映员&&https://www.zhipin.com/c101280100-p170613/",
+            "其他服务业职位&&https://www.zhipin.com/c101280100-p290401/"
+        ]
+    },
+    "餐饮": {
+        "前厅": [
+            "服务员&&https://www.zhipin.com/c101280100-p290202/",
+            "收银&&https://www.zhipin.com/c101280100-p290201/",
+            "礼仪/迎宾/接待&&https://www.zhipin.com/c101280100-p290107/",
+            "传菜员&&https://www.zhipin.com/c101280100-p290216/"
+        ],
+        "后厨": [
+            "餐饮学徒&&https://www.zhipin.com/c101280100-p290212/",
+            "厨师&&https://www.zhipin.com/c101280100-p290203/",
+            "中餐厨师&&https://www.zhipin.com/c101280100-p290219/",
+            "烧烤师傅&&https://www.zhipin.com/c101280100-p290222/",
+            "西餐厨师&&https://www.zhipin.com/c101280100-p290220/",
+            "日料厨师&&https://www.zhipin.com/c101280100-p290221/",
+            "凉菜厨师&&https://www.zhipin.com/c101280100-p290218/",
+            "面点师&&https://www.zhipin.com/c101280100-p290213/",
+            "后厨&&https://www.zhipin.com/c101280100-p290208/",
+            "配菜打荷&&https://www.zhipin.com/c101280100-p290209/",
+            "洗碗工&&https://www.zhipin.com/c101280100-p290217/",
+            "水台/水产员&&https://www.zhipin.com/c101280100-p290224/"
+        ],
+        "餐饮管理": [
+            "餐饮店长&&https://www.zhipin.com/c101280100-p290206/",
+            "餐饮前厅经理/领班&&https://www.zhipin.com/c101280100-p290207/",
+            "储备店长&&https://www.zhipin.com/c101280100-p290226/",
+            "厨师长&&https://www.zhipin.com/c101280100-p290215/",
+            "行政总厨&&https://www.zhipin.com/c101280100-p290214/",
+            "餐饮督导&&https://www.zhipin.com/c101280100-p290228/"
+        ],
+        "甜点饮品": [
+            "咖啡师&&https://www.zhipin.com/c101280100-p290204/",
+            "茶艺师&&https://www.zhipin.com/c101280100-p290210/",
+            "奶茶店店员&&https://www.zhipin.com/c101280100-p290223/",
+            "调酒师&&https://www.zhipin.com/c101280100-p290227/",
+            "面包/烘焙师&&https://www.zhipin.com/c101280100-p290225/",
+            "蛋糕/裱花师&&https://www.zhipin.com/c101280100-p290211/"
+        ],
+        "其他餐饮岗位": [
+            "送餐员&&https://www.zhipin.com/c101280100-p290205/"
+        ]
+    },
+    "酒店/旅游": {
+        "酒店": [
+            "酒店前台&&https://www.zhipin.com/c101280100-p290102/",
+            "礼仪/迎宾/接待&&https://www.zhipin.com/c101280100-p290107/",
+            "客房服务员&&https://www.zhipin.com/c101280100-p290103/",
+            "酒店经理&&https://www.zhipin.com/c101280100-p290104/",
+            "酒店前厅经理&&https://www.zhipin.com/c101280100-p290115/",
+            "客房经理&&https://www.zhipin.com/c101280100-p290116/",
+            "民宿管家&&https://www.zhipin.com/c101280100-p290158/"
+        ],
+        "旅游服务": [
+            "旅游顾问&&https://www.zhipin.com/c101280100-p280103/",
+            "导游&&https://www.zhipin.com/c101280100-p280104/",
+            "讲解员&&https://www.zhipin.com/c101280100-p280106/",
+            "计调&&https://www.zhipin.com/c101280100-p280101/",
+            "票务员&&https://www.zhipin.com/c101280100-p280105/",
+            "签证专员&&https://www.zhipin.com/c101280100-p280102/"
+        ],
+        "旅游产品开发/策划": [
+            "旅游产品经理&&https://www.zhipin.com/c101280100-p280201/",
+            "旅游策划师&&https://www.zhipin.com/c101280100-p280202/"
+        ],
+        "其他旅游职位": [
+            "其他旅游职位&&https://www.zhipin.com/c101280100-p280301/"
+        ]
+    },
+    "教育培训": {
+        "教师": [
+            "教师&&https://www.zhipin.com/c101280100-p190301/",
+            "英语教师&&https://www.zhipin.com/c101280100-p190309/",
+            "助教&&https://www.zhipin.com/c101280100-p190302/",
+            "数学教师&&https://www.zhipin.com/c101280100-p190317/",
+            "语文教师&&https://www.zhipin.com/c101280100-p190316/",
+            "高中教师&&https://www.zhipin.com/c101280100-p190303/",
+            "初中教师&&https://www.zhipin.com/c101280100-p190304/",
+            "小学教师&&https://www.zhipin.com/c101280100-p190305/",
+            "家教&&https://www.zhipin.com/c101280100-p190321/",
+            "物理教师&&https://www.zhipin.com/c101280100-p190318/",
+            "化学教师&&https://www.zhipin.com/c101280100-p190319/",
+            "理科教师&&https://www.zhipin.com/c101280100-p190307/",
+            "日语教师&&https://www.zhipin.com/c101280100-p190314/",
+            "生物教师&&https://www.zhipin.com/c101280100-p190320/",
+            "文科教师&&https://www.zhipin.com/c101280100-p190308/",
+            "地理教师&&https://www.zhipin.com/c101280100-p190245/",
+            "其他外语教师&&https://www.zhipin.com/c101280100-p190315/"
+        ],
+        "幼少儿教师": [
+            "幼教&&https://www.zhipin.com/c101280100-p190306/",
+            "托管老师&&https://www.zhipin.com/c101280100-p190322/",
+            "早教老师&&https://www.zhipin.com/c101280100-p190323/",
+            "保育员&&https://www.zhipin.com/c101280100-p190326/",
+            "感统训练教师&&https://www.zhipin.com/c101280100-p190324/"
+        ],
+        "教育行政": [
+            "教务管理&&https://www.zhipin.com/c101280100-p190202/",
+            "校长/副校长&&https://www.zhipin.com/c101280100-p190201/",
+            "班主任/辅导员&&https://www.zhipin.com/c101280100-p190204/",
+            "教学管理&&https://www.zhipin.com/c101280100-p190203/",
+            "园长/副园长&&https://www.zhipin.com/c101280100-p190205/",
+            "就业老师&&https://www.zhipin.com/c101280100-p190313/"
+        ],
+        "运动健身": [
+            "健身教练&&https://www.zhipin.com/c101280100-p190705/",
+            "体育教师/体育教练&&https://www.zhipin.com/c101280100-p190312/",
+            "篮球教练&&https://www.zhipin.com/c101280100-p190706/",
+            "瑜伽老师&&https://www.zhipin.com/c101280100-p190702/",
+            "游泳教练&&https://www.zhipin.com/c101280100-p190704/",
+            "跆拳道教练&&https://www.zhipin.com/c101280100-p190707/",
+            "武术教练&&https://www.zhipin.com/c101280100-p190708/",
+            "轮滑教练&&https://www.zhipin.com/c101280100-p190709/",
+            "乒乓球教练&&https://www.zhipin.com/c101280100-p190719/",
+            "足球教练&&https://www.zhipin.com/c101280100-p190766/",
+            "羽毛球教练&&https://www.zhipin.com/c101280100-p190720/",
+            "拳击教练&&https://www.zhipin.com/c101280100-p190769/",
+            "台球教练/助教&&https://www.zhipin.com/c101280100-p190770/"
+        ],
+        "文化艺术": [
+            "美术教师&&https://www.zhipin.com/c101280100-p190311/",
+            "舞蹈老师&&https://www.zhipin.com/c101280100-p190701/",
+            "书法教师&&https://www.zhipin.com/c101280100-p190712/",
+            "音乐教师&&https://www.zhipin.com/c101280100-p190310/",
+            "播音主持教师&&https://www.zhipin.com/c101280100-p190716/",
+            "钢琴教师&&https://www.zhipin.com/c101280100-p190713/",
+            "古筝教师&&https://www.zhipin.com/c101280100-p190715/",
+            "吉他教师&&https://www.zhipin.com/c101280100-p190714/",
+            "表演教师&&https://www.zhipin.com/c101280100-p190710/",
+            "架子鼓老师&&https://www.zhipin.com/c101280100-p190767/",
+            "围棋老师&&https://www.zhipin.com/c101280100-p190768/"
+        ],
+        "科学探索培训": [
+            "乐高教师&&https://www.zhipin.com/c101280100-p190717/",
+            "机器人教师&&https://www.zhipin.com/c101280100-p190711/",
+            "少儿编程老师&&https://www.zhipin.com/c101280100-p190718/"
+        ],
+        "职业培训": [
+            "培训师&&https://www.zhipin.com/c101280100-p190105/",
+            "拓展培训&&https://www.zhipin.com/c101280100-p190504/",
+            "IT培训讲师&&https://www.zhipin.com/c101280100-p190406/",
+            "财会培训讲师&&https://www.zhipin.com/c101280100-p190501/"
+        ],
+        "教育产品研发": [
+            "培训师&&https://www.zhipin.com/c101280100-p190105/",
+            "课程设计&&https://www.zhipin.com/c101280100-p190101/",
+            "课程编辑&&https://www.zhipin.com/c101280100-p190102/",
+            "培训策划&&https://www.zhipin.com/c101280100-p190107/",
+            "培训研究&&https://www.zhipin.com/c101280100-p190104/",
+            "其他教育产品研发职位&&https://www.zhipin.com/c101280100-p190106/"
+        ],
+        "课程销售": [
+            "课程顾问&&https://www.zhipin.com/c101280100-p190601/",
+            "招生顾问&&https://www.zhipin.com/c101280100-p190602/",
+            "留学顾问&&https://www.zhipin.com/c101280100-p190603/"
+        ],
+        "其他教育培训职位": [
+            "其他教育培训职位&&https://www.zhipin.com/c101280100-p190801/"
+        ]
+    },
+    "设计": {
+        "视觉/交互设计": [
+            "平面设计&&https://www.zhipin.com/c101280100-p120106/",
+            "美工&&https://www.zhipin.com/c101280100-p120117/",
+            "设计师助理&&https://www.zhipin.com/c101280100-p120119/",
+            "UI设计师&&https://www.zhipin.com/c101280100-p120105/",
+            "视觉设计师&&https://www.zhipin.com/c101280100-p120101/",
+            "广告设计&&https://www.zhipin.com/c101280100-p140603/",
+            "交互设计师&&https://www.zhipin.com/c101280100-p120201/",
+            "网页设计师&&https://www.zhipin.com/c101280100-p120102/",
+            "多媒体设计师&&https://www.zhipin.com/c101280100-p120109/"
+        ],
+        "环境设计": [
+            "室内设计&&https://www.zhipin.com/c101280100-p220205/",
+            "家居设计&&https://www.zhipin.com/c101280100-p120605/",
+            "软装设计师&&https://www.zhipin.com/c101280100-p220217/",
+            "展览/展示设计&&https://www.zhipin.com/c101280100-p120611/",
+            "陈列设计&&https://www.zhipin.com/c101280100-p120608/",
+            "照明设计&&https://www.zhipin.com/c101280100-p120612/",
+            "园林/景观设计&&https://www.zhipin.com/c101280100-p220206/",
+            "舞美设计师&&https://www.zhipin.com/c101280100-p120614/",
+            "CAD绘图员&&https://www.zhipin.com/c101280100-p120116/"
+        ],
+        "工业设计": [
+            "家具设计&&https://www.zhipin.com/c101280100-p120604/",
+            "橱柜设计&&https://www.zhipin.com/c101280100-p120603/",
+            "工业设计&&https://www.zhipin.com/c101280100-p120602/",
+            "包装设计&&https://www.zhipin.com/c101280100-p120118/",
+            "珠宝设计&&https://www.zhipin.com/c101280100-p120606/",
+            "家具拆单员&&https://www.zhipin.com/c101280100-p120613/"
+        ],
+        "服装设计": [
+            "服装/纺织设计&&https://www.zhipin.com/c101280100-p300501/",
+            "面料辅料开发&&https://www.zhipin.com/c101280100-p300507/"
+        ],
+        "美术/3D/动画": [
+            "3D设计师&&https://www.zhipin.com/c101280100-p120107/",
+            "插画师&&https://www.zhipin.com/c101280100-p120121/",
+            "动画设计&&https://www.zhipin.com/c101280100-p120120/",
+            "原画师&&https://www.zhipin.com/c101280100-p120110/",
+            "漫画师&&https://www.zhipin.com/c101280100-p120122/",
+            "修图师&&https://www.zhipin.com/c101280100-p120123/"
+        ],
+        "游戏设计": [
+            "游戏场景&&https://www.zhipin.com/c101280100-p120113/",
+            "游戏角色&&https://www.zhipin.com/c101280100-p120114/",
+            "游戏界面设计师&&https://www.zhipin.com/c101280100-p120112/",
+            "游戏数值策划&&https://www.zhipin.com/c101280100-p120303/",
+            "系统策划&&https://www.zhipin.com/c101280100-p120305/",
+            "游戏特效&&https://www.zhipin.com/c101280100-p120111/",
+            "游戏动作&&https://www.zhipin.com/c101280100-p120115/",
+            "技术美术&&https://www.zhipin.com/c101280100-p100212/",
+            "游戏主美术&&https://www.zhipin.com/c101280100-p120306/"
+        ],
+        "用户研究": [
+            "用户研究员&&https://www.zhipin.com/c101280100-p120302/",
+            "用户研究经理&&https://www.zhipin.com/c101280100-p120407/",
+            "用户研究总监&&https://www.zhipin.com/c101280100-p120408/",
+            "UX设计师&&https://www.zhipin.com/c101280100-p120304/"
+        ],
+        "高端设计职位": [
+            "设计经理/主管&&https://www.zhipin.com/c101280100-p120401/",
+            "设计总监&&https://www.zhipin.com/c101280100-p120402/",
+            "视觉设计总监&&https://www.zhipin.com/c101280100-p120404/"
+        ],
+        "其他设计职位": [
+            "其他设计职位&&https://www.zhipin.com/c101280100-p120501/"
+        ]
+    },
+    "房地产/建筑": {
+        "工程管理": [
+            "建筑施工项目经理&&https://www.zhipin.com/c101280100-p220212/",
+            "工程造价&&https://www.zhipin.com/c101280100-p220209/",
+            "工程监理&&https://www.zhipin.com/c101280100-p220208/",
+            "工程预算&&https://www.zhipin.com/c101280100-p220210/",
+            "施工员&&https://www.zhipin.com/c101280100-p220218/",
+            "资料员&&https://www.zhipin.com/c101280100-p220211/",
+            "材料员&&https://www.zhipin.com/c101280100-p220220/",
+            "测绘/测量&&https://www.zhipin.com/c101280100-p220219/",
+            "施工安全员&&https://www.zhipin.com/c101280100-p220225/"
+        ],
+        "装饰装修": [
+            "室内设计&&https://www.zhipin.com/c101280100-p220205/",
+            "软装设计师&&https://www.zhipin.com/c101280100-p220217/",
+            "装修项目经理&&https://www.zhipin.com/c101280100-p220222/"
+        ],
+        "物业管理": [
+            "物业经理&&https://www.zhipin.com/c101280100-p220401/",
+            "物业管理员&&https://www.zhipin.com/c101280100-p220406/",
+            "综合维修工&&https://www.zhipin.com/c101280100-p220404/",
+            "物业工程主管&&https://www.zhipin.com/c101280100-p220407/",
+            "物业招商管理&&https://www.zhipin.com/c101280100-p220403/",
+            "锅炉工&&https://www.zhipin.com/c101280100-p300627/",
+            "弱电工&&https://www.zhipin.com/c101280100-p300635/",
+            "绿化工&&https://www.zhipin.com/c101280100-p220405/",
+            "保安&&https://www.zhipin.com/c101280100-p290105/",
+            "保安经理&&https://www.zhipin.com/c101280100-p290117/",
+            "消防中控员&&https://www.zhipin.com/c101280100-p290121/",
+            "消防维保员&&https://www.zhipin.com/c101280100-p290123/",
+            "水电工&&https://www.zhipin.com/c101280100-p300638/"
+        ],
+        "建筑/规划设计": [
+            "土木/土建/结构工程师&&https://www.zhipin.com/c101280100-p220204/",
+            "园林/景观设计&&https://www.zhipin.com/c101280100-p220206/",
+            "建筑设计师&&https://www.zhipin.com/c101280100-p220203/",
+            "建筑工程师&&https://www.zhipin.com/c101280100-p220202/",
+            "城市规划设计&&https://www.zhipin.com/c101280100-p220207/",
+            "弱电工程师&&https://www.zhipin.com/c101280100-p220213/",
+            "建筑机电工程师&&https://www.zhipin.com/c101280100-p220223/",
+            "给排水工程师&&https://www.zhipin.com/c101280100-p220214/",
+            "暖通工程师&&https://www.zhipin.com/c101280100-p220215/",
+            "幕墙工程师&&https://www.zhipin.com/c101280100-p220216/",
+            "BIM工程师&&https://www.zhipin.com/c101280100-p220221/",
+            "消防工程师&&https://www.zhipin.com/c101280100-p220224/"
+        ],
+        "房地产规划开发": [
+            "地产招投标&&https://www.zhipin.com/c101280100-p220103/",
+            "地产项目管理&&https://www.zhipin.com/c101280100-p220102/",
+            "房地产策划&&https://www.zhipin.com/c101280100-p220101/",
+            "房产评估师&&https://www.zhipin.com/c101280100-p220302/"
+        ],
+        "高端房地产职位": [
+            "地产项目总监&&https://www.zhipin.com/c101280100-p220501/",
+            "地产策划总监&&https://www.zhipin.com/c101280100-p220502/",
+            "地产招投标总监&&https://www.zhipin.com/c101280100-p220503/"
+        ],
+        "房地产销售": [
+            "置业顾问&&https://www.zhipin.com/c101280100-p160401/",
+            "地产中介&&https://www.zhipin.com/c101280100-p160403/",
+            "房地产销售总监&&https://www.zhipin.com/c101280100-p220505/"
+        ],
+        "建筑/装修工人": [
+            "电工&&https://www.zhipin.com/c101280100-p300606/",
+            "焊工&&https://www.zhipin.com/c101280100-p300604/",
+            "木工&&https://www.zhipin.com/c101280100-p300608/",
+            "空调工&&https://www.zhipin.com/c101280100-p300625/",
+            "油漆工&&https://www.zhipin.com/c101280100-p300609/",
+            "电梯工&&https://www.zhipin.com/c101280100-p300626/",
+            "泥瓦工&&https://www.zhipin.com/c101280100-p300639/"
+        ],
+        "其他房地产职位": [
+            "其他房地产职位&&https://www.zhipin.com/c101280100-p220601/"
+        ]
+    },
+    "直播/影视/传媒": {
+        "直播": [
+            "主播&&https://www.zhipin.com/c101280100-p170610/",
+            "带货主播&&https://www.zhipin.com/c101280100-p170625/",
+            "直播运营&&https://www.zhipin.com/c101280100-p130122/",
+            "游戏主播&&https://www.zhipin.com/c101280100-p170629/",
+            "中控/场控/助播&&https://www.zhipin.com/c101280100-p170621/"
+        ],
+        "影视": [
+            "化妆/造型师&&https://www.zhipin.com/c101280100-p210609/",
+            "演员/配音员&&https://www.zhipin.com/c101280100-p170611/",
+            "艺人助理&&https://www.zhipin.com/c101280100-p170617/",
+            "主持人/DJ&&https://www.zhipin.com/c101280100-p170620/",
+            "模特&&https://www.zhipin.com/c101280100-p170630/",
+            "摄影/摄像师&&https://www.zhipin.com/c101280100-p170602/",
+            "导演/编导&&https://www.zhipin.com/c101280100-p170601/",
+            "经纪人/星探&&https://www.zhipin.com/c101280100-p170605/",
+            "编剧&&https://www.zhipin.com/c101280100-p170616/",
+            "制片人&&https://www.zhipin.com/c101280100-p170615/",
+            "影视策划&&https://www.zhipin.com/c101280100-p170609/",
+            "影视发行&&https://www.zhipin.com/c101280100-p170608/",
+            "剪辑师&&https://www.zhipin.com/c101280100-p170623/",
+            "视频编辑&&https://www.zhipin.com/c101280100-p170603/",
+            "后期制作&&https://www.zhipin.com/c101280100-p170606/",
+            "动画设计&&https://www.zhipin.com/c101280100-p120120/",
+            "修图师&&https://www.zhipin.com/c101280100-p120123/",
+            "灯光师&&https://www.zhipin.com/c101280100-p170622/",
+            "录音/音效&&https://www.zhipin.com/c101280100-p170614/",
+            "音频编辑&&https://www.zhipin.com/c101280100-p170604/",
+            "影视特效&&https://www.zhipin.com/c101280100-p170624/",
+            "剧本杀主持人&&https://www.zhipin.com/c101280100-p170626/",
+            "儿童引导师&&https://www.zhipin.com/c101280100-p170628/",
+            "放映员&&https://www.zhipin.com/c101280100-p170613/",
+            "剧本杀编剧&&https://www.zhipin.com/c101280100-p170627/",
+            "舞美设计师&&https://www.zhipin.com/c101280100-p120614/"
+        ],
+        "广告": [
+            "策划经理&&https://www.zhipin.com/c101280100-p140604/",
+            "广告文案&&https://www.zhipin.com/c101280100-p140605/",
+            "广告客户执行&&https://www.zhipin.com/c101280100-p140202/",
+            "广告/会展项目经理&&https://www.zhipin.com/c101280100-p140612/",
+            "广告创意策划&&https://www.zhipin.com/c101280100-p140601/",
+            "创意总监&&https://www.zhipin.com/c101280100-p140407/",
+            "广告设计&&https://www.zhipin.com/c101280100-p140603/",
+            "美术指导&&https://www.zhipin.com/c101280100-p140602/",
+            "广告制作&&https://www.zhipin.com/c101280100-p140607/",
+            "广告审核&&https://www.zhipin.com/c101280100-p140611/"
+        ],
+        "采编/写作/出版": [
+            "编辑&&https://www.zhipin.com/c101280100-p170102/",
+            "主编/副主编&&https://www.zhipin.com/c101280100-p130201/",
+            "记者/采编&&https://www.zhipin.com/c101280100-p170101/",
+            "作者/撰稿人&&https://www.zhipin.com/c101280100-p170104/",
+            "校对录入&&https://www.zhipin.com/c101280100-p170106/",
+            "印刷排版&&https://www.zhipin.com/c101280100-p170109/",
+            "出版发行&&https://www.zhipin.com/c101280100-p170105/",
+            "剧本杀编剧&&https://www.zhipin.com/c101280100-p170627/"
+        ],
+        "其他传媒职位": [
+            "其他传媒职位&&https://www.zhipin.com/c101280100-p170501/"
+        ]
+    },
+    "市场/公关/广告": {
+        "市场营销": [
+            "市场营销策划&&https://www.zhipin.com/c101280100-p140101/",
+            "海外市场&&https://www.zhipin.com/c101280100-p140111/",
+            "活动策划执行&&https://www.zhipin.com/c101280100-p140109/",
+            "会务/会展执行&&https://www.zhipin.com/c101280100-p140506/",
+            "会务/会展策划&&https://www.zhipin.com/c101280100-p140505/",
+            "商务渠道&&https://www.zhipin.com/c101280100-p140107/",
+            "市场总监&&https://www.zhipin.com/c101280100-p140401/",
+            "CMO&&https://www.zhipin.com/c101280100-p140404/"
+        ],
+        "推广/投放": [
+            "市场推广/地推&&https://www.zhipin.com/c101280100-p140104/",
+            "网络推广&&https://www.zhipin.com/c101280100-p130109/",
+            "游戏推广&&https://www.zhipin.com/c101280100-p140115/",
+            "媒介投放&&https://www.zhipin.com/c101280100-p140608/",
+            "媒介商务BD&&https://www.zhipin.com/c101280100-p140609/",
+            "媒介专员&&https://www.zhipin.com/c101280100-p140204/",
+            "媒介经理/总监&&https://www.zhipin.com/c101280100-p140206/",
+            "信息流优化师&&https://www.zhipin.com/c101280100-p140116/",
+            "SEO&&https://www.zhipin.com/c101280100-p140105/",
+            "SEM&&https://www.zhipin.com/c101280100-p140106/"
+        ],
+        "政府事务": [
+            "政府关系&&https://www.zhipin.com/c101280100-p140112/",
+            "项目申报专员&&https://www.zhipin.com/c101280100-p140804/",
+            "政策研究&&https://www.zhipin.com/c101280100-p140801/",
+            "社工&&https://www.zhipin.com/c101280100-p140803/"
+        ],
+        "公关": [
+            "品牌公关&&https://www.zhipin.com/c101280100-p140203/",
+            "公关总监&&https://www.zhipin.com/c101280100-p140405/"
+        ],
+        "广告": [
+            "策划经理&&https://www.zhipin.com/c101280100-p140604/",
+            "广告文案&&https://www.zhipin.com/c101280100-p140605/",
+            "广告客户执行&&https://www.zhipin.com/c101280100-p140202/",
+            "广告/会展项目经理&&https://www.zhipin.com/c101280100-p140612/",
+            "广告创意策划&&https://www.zhipin.com/c101280100-p140601/",
+            "创意总监&&https://www.zhipin.com/c101280100-p140407/",
+            "广告设计&&https://www.zhipin.com/c101280100-p140603/",
+            "美术指导&&https://www.zhipin.com/c101280100-p140602/",
+            "广告制作&&https://www.zhipin.com/c101280100-p140607/",
+            "广告审核&&https://www.zhipin.com/c101280100-p140611/"
+        ],
+        "调研分析": [
+            "市场调研&&https://www.zhipin.com/c101280100-p260109/",
+            "选址开发&&https://www.zhipin.com/c101280100-p140114/",
+            "商业数据分析&&https://www.zhipin.com/c101280100-p140108/",
+            "用户研究员&&https://www.zhipin.com/c101280100-p120302/",
+            "用户研究经理&&https://www.zhipin.com/c101280100-p120407/",
+            "用户研究总监&&https://www.zhipin.com/c101280100-p120408/"
+        ],
+        "广告/会展销售": [
+            "广告销售&&https://www.zhipin.com/c101280100-p140313/",
+            "会展活动销售&&https://www.zhipin.com/c101280100-p140504/",
+            "会议活动销售&&https://www.zhipin.com/c101280100-p140501/"
+        ],
+        "其他市场职位": [
+            "其他市场职位&&https://www.zhipin.com/c101280100-p140701/"
+        ]
+    },
+    "物流/仓储/司机": {
+        "物流/运输": [
+            "物流专员&&https://www.zhipin.com/c101280100-p240103/",
+            "物流经理&&https://www.zhipin.com/c101280100-p240104/",
+            "物流总监&&https://www.zhipin.com/c101280100-p240402/",
+            "物流运营&&https://www.zhipin.com/c101280100-p240105/",
+            "物流跟单&&https://www.zhipin.com/c101280100-p240106/",
+            "调度员&&https://www.zhipin.com/c101280100-p240108/",
+            "运输经理/主管&&https://www.zhipin.com/c101280100-p240110/",
+            "跟车员&&https://www.zhipin.com/c101280100-p240119/",
+            "水/空/陆运操作&&https://www.zhipin.com/c101280100-p240113/",
+            "货运代理专员&&https://www.zhipin.com/c101280100-p240111/",
+            "货运代理经理&&https://www.zhipin.com/c101280100-p240112/",
+            "集装箱管理&&https://www.zhipin.com/c101280100-p240302/",
+            "物流/仓储项目经理&&https://www.zhipin.com/c101280100-p240109/"
+        ],
+        "配送理货": [
+            "配/理/拣/发货&&https://www.zhipin.com/c101280100-p240206/",
+            "配送员&&https://www.zhipin.com/c101280100-p240303/",
+            "快递员&&https://www.zhipin.com/c101280100-p240304/",
+            "搬运工/装卸工&&https://www.zhipin.com/c101280100-p300630/",
+            "配送站长&&https://www.zhipin.com/c101280100-p240118/",
+            "叉车工&&https://www.zhipin.com/c101280100-p300602/"
+        ],
+        "驾驶员": [
+            "货运司机&&https://www.zhipin.com/c101280100-p240301/",
+            "商务司机&&https://www.zhipin.com/c101280100-p150208/",
+            "网约车司机&&https://www.zhipin.com/c101280100-p240305/",
+            "代驾司机&&https://www.zhipin.com/c101280100-p240306/",
+            "驾校教练&&https://www.zhipin.com/c101280100-p240307/",
+            "客运司机&&https://www.zhipin.com/c101280100-p240308/",
+            "无人机飞手&&https://www.zhipin.com/c101280100-p100311/"
+        ],
+        "仓储": [
+            "仓库管理员&&https://www.zhipin.com/c101280100-p240204/",
+            "仓库文员&&https://www.zhipin.com/c101280100-p240205/",
+            "仓库主管/经理&&https://www.zhipin.com/c101280100-p240201/"
+        ],
+        "供应链": [
+            "供应链专员&&https://www.zhipin.com/c101280100-p240101/",
+            "供应链经理&&https://www.zhipin.com/c101280100-p240102/",
+            "供应链总监&&https://www.zhipin.com/c101280100-p240401/",
+            "生产计划/物料管理(PMC)&&https://www.zhipin.com/c101280100-p300107/"
+        ]
+    },
+    "采购/贸易": {
+        "采购": [
+            "采购专员/助理&&https://www.zhipin.com/c101280100-p250103/",
+            "采购经理/主管&&https://www.zhipin.com/c101280100-p250102/",
+            "采购工程师&&https://www.zhipin.com/c101280100-p250105/",
+            "买手&&https://www.zhipin.com/c101280100-p250104/",
+            "供应商质量工程师&&https://www.zhipin.com/c101280100-p250108/",
+            "商品专员/助理&&https://www.zhipin.com/c101280100-p250111/",
+            "商品经理&&https://www.zhipin.com/c101280100-p140312/",
+            "采购总监&&https://www.zhipin.com/c101280100-p250101/",
+            "招标专员&&https://www.zhipin.com/c101280100-p250109/",
+            "投标专员&&https://www.zhipin.com/c101280100-p250110/"
+        ],
+        "外贸销售": [
+            "外贸业务员&&https://www.zhipin.com/c101280100-p250203/",
+            "外贸经理&&https://www.zhipin.com/c101280100-p250201/"
+        ],
+        "进出口贸易": [
+            "贸易跟单&&https://www.zhipin.com/c101280100-p250204/",
+            "单证员&&https://www.zhipin.com/c101280100-p240117/",
+            "报关/报检员&&https://www.zhipin.com/c101280100-p240114/"
+        ],
+        "其他采购/贸易职位": [
+            "其他采购/贸易类职位&&https://www.zhipin.com/c101280100-p250301/"
+        ]
+    },
+    "汽车": {
+        "新能源汽车": [
+            "电池工程师&&https://www.zhipin.com/c101280100-p300801/",
+            "电机工程师&&https://www.zhipin.com/c101280100-p300802/"
+        ],
+        "汽车研发/制造": [
+            "车身/造型设计&&https://www.zhipin.com/c101280100-p230102/",
+            "汽车电子工程师&&https://www.zhipin.com/c101280100-p230106/",
+            "自动驾驶系统工程师&&https://www.zhipin.com/c101280100-p101308/",
+            "线束设计&&https://www.zhipin.com/c101280100-p300803/",
+            "内外饰设计工程师&&https://www.zhipin.com/c101280100-p230110/",
+            "动力系统工程师&&https://www.zhipin.com/c101280100-p230105/",
+            "底盘工程师&&https://www.zhipin.com/c101280100-p230103/",
+            "汽车零部件设计&&https://www.zhipin.com/c101280100-p230107/",
+            "汽车设计&&https://www.zhipin.com/c101280100-p230101/",
+            "汽车质量工程师&&https://www.zhipin.com/c101280100-p230109/",
+            "总装工程师&&https://www.zhipin.com/c101280100-p230210/",
+            "汽车项目管理&&https://www.zhipin.com/c101280100-p230108/"
+        ],
+        "汽车服务": [
+            "汽车维修&&https://www.zhipin.com/c101280100-p230204/",
+            "汽车美容&&https://www.zhipin.com/c101280100-p230205/",
+            "洗车工&&https://www.zhipin.com/c101280100-p230213/",
+            "汽车改装&&https://www.zhipin.com/c101280100-p230209/",
+            "汽车服务顾问&&https://www.zhipin.com/c101280100-p230203/",
+            "4S店店长/维修站长&&https://www.zhipin.com/c101280100-p230208/",
+            "汽车查勘定损&&https://www.zhipin.com/c101280100-p230206/",
+            "加油员&&https://www.zhipin.com/c101280100-p230214/"
+        ],
+        "汽车销售": [
+            "汽车销售&&https://www.zhipin.com/c101280100-p230201/",
+            "汽车配件销售&&https://www.zhipin.com/c101280100-p230202/",
+            "二手车评估师&&https://www.zhipin.com/c101280100-p230207/"
+        ]
+    },
+    "医疗健康": {
+        "护士/护理": [
+            "护士&&https://www.zhipin.com/c101280100-p210201/",
+            "导医&&https://www.zhipin.com/c101280100-p210503/",
+            "护士长&&https://www.zhipin.com/c101280100-p210202/",
+            "护工&&https://www.zhipin.com/c101280100-p290111/"
+        ],
+        "医生/医技": [
+            "外科医生&&https://www.zhipin.com/c101280100-p210309/",
+            "内科医生&&https://www.zhipin.com/c101280100-p210306/",
+            "皮肤科医生&&https://www.zhipin.com/c101280100-p210313/",
+            "妇产科医生&&https://www.zhipin.com/c101280100-p210311/",
+            "儿科医生&&https://www.zhipin.com/c101280100-p210310/",
+            "眼科医生&&https://www.zhipin.com/c101280100-p210312/",
+            "精神心理科医生&&https://www.zhipin.com/c101280100-p210303/",
+            "整形医生&&https://www.zhipin.com/c101280100-p210402/",
+            "全科医生&&https://www.zhipin.com/c101280100-p210307/",
+            "耳鼻喉科医生&&https://www.zhipin.com/c101280100-p210314/",
+            "检验科医师&&https://www.zhipin.com/c101280100-p210111/",
+            "放射科医生&&https://www.zhipin.com/c101280100-p210113/",
+            "超声科医生&&https://www.zhipin.com/c101280100-p210114/",
+            "麻醉科医生&&https://www.zhipin.com/c101280100-p210315/",
+            "病理科医生&&https://www.zhipin.com/c101280100-p210316/",
+            "医生助理&&https://www.zhipin.com/c101280100-p210112/",
+            "中医&&https://www.zhipin.com/c101280100-p210302/",
+            "口腔科医生&&https://www.zhipin.com/c101280100-p210304/",
+            "幼儿园保健医&&https://www.zhipin.com/c101280100-p210308/",
+            "药剂师&&https://www.zhipin.com/c101280100-p210104/",
+            "验光师&&https://www.zhipin.com/c101280100-p210109/",
+            "医务管理&&https://www.zhipin.com/c101280100-p210317/",
+            "其他医生职位&&https://www.zhipin.com/c101280100-p210103/"
+        ],
+        "保健理疗": [
+            "理疗师&&https://www.zhipin.com/c101280100-p210403/",
+            "营养师/健康管理师&&https://www.zhipin.com/c101280100-p210401/",
+            "针灸推拿&&https://www.zhipin.com/c101280100-p210404/",
+            "康复治疗师&&https://www.zhipin.com/c101280100-p210305/",
+            "产后康复师&&https://www.zhipin.com/c101280100-p290118/"
+        ],
+        "药店": [
+            "药店店员&&https://www.zhipin.com/c101280100-p210803/",
+            "执业药师/驻店药师&&https://www.zhipin.com/c101280100-p210802/",
+            "药店店长&&https://www.zhipin.com/c101280100-p210801/"
+        ],
+        "生物医药": [
+            "生物学研究人员&&https://www.zhipin.com/c101280100-p210115/",
+            "医药研发&&https://www.zhipin.com/c101280100-p210108/",
+            "生物信息工程师&&https://www.zhipin.com/c101280100-p210128/",
+            "药品生产&&https://www.zhipin.com/c101280100-p210117/",
+            "药品注册&&https://www.zhipin.com/c101280100-p210116/",
+            "医药项目经理&&https://www.zhipin.com/c101280100-p210123/",
+            "细胞培养员&&https://www.zhipin.com/c101280100-p210124/",
+            "药理研究&&https://www.zhipin.com/c101280100-p210130/",
+            "药物合成&&https://www.zhipin.com/c101280100-p210126/",
+            "制剂研发&&https://www.zhipin.com/c101280100-p210129/",
+            "药物分析&&https://www.zhipin.com/c101280100-p210125/",
+            "医疗产品技术支持&&https://www.zhipin.com/c101280100-p210127/"
+        ],
+        "临床试验": [
+            "临床协调员&&https://www.zhipin.com/c101280100-p210119/",
+            "临床监查员&&https://www.zhipin.com/c101280100-p211002/",
+            "临床项目经理&&https://www.zhipin.com/c101280100-p211001/",
+            "临床数据分析&&https://www.zhipin.com/c101280100-p210120/",
+            "临床医学经理/专员&&https://www.zhipin.com/c101280100-p210118/",
+            "临床医学总监&&https://www.zhipin.com/c101280100-p210501/"
+        ],
+        "医疗器械": [
+            "医疗器械生产/质量管理&&https://www.zhipin.com/c101280100-p210122/",
+            "医疗器械研发&&https://www.zhipin.com/c101280100-p210105/",
+            "医疗器械注册&&https://www.zhipin.com/c101280100-p210121/",
+            "试剂研发&&https://www.zhipin.com/c101280100-p210901/"
+        ],
+        "医疗销售": [
+            "医药代表&&https://www.zhipin.com/c101280100-p210502/",
+            "医疗器械销售&&https://www.zhipin.com/c101280100-p210506/",
+            "药店店员&&https://www.zhipin.com/c101280100-p210803/",
+            "药店店长&&https://www.zhipin.com/c101280100-p210801/",
+            "医美咨询&&https://www.zhipin.com/c101280100-p210505/",
+            "健康顾问&&https://www.zhipin.com/c101280100-p210504/",
+            "口腔咨询师&&https://www.zhipin.com/c101280100-p210507/"
+        ],
+        "其他医疗健康职位": [
+            "医学编辑&&https://www.zhipin.com/c101280100-p210101/",
+            "其他医疗健康职位&&https://www.zhipin.com/c101280100-p210701/"
+        ]
+    },
+    "金融": {
+        "银行": [
+            "柜员&&https://www.zhipin.com/c101280100-p180402/",
+            "银行大堂经理&&https://www.zhipin.com/c101280100-p180404/",
+            "客户经理&&https://www.zhipin.com/c101280100-p180403/",
+            "信贷专员&&https://www.zhipin.com/c101280100-p180406/"
+        ],
+        "证券/基金/期货": [
+            "证券交易员&&https://www.zhipin.com/c101280100-p180106/",
+            "卖方分析师&&https://www.zhipin.com/c101280100-p180802/",
+            "买方分析师&&https://www.zhipin.com/c101280100-p180803/",
+            "投资银行业务&&https://www.zhipin.com/c101280100-p180806/",
+            "基金经理&&https://www.zhipin.com/c101280100-p180805/",
+            "柜员&&https://www.zhipin.com/c101280100-p180402/",
+            "量化研究员&&https://www.zhipin.com/c101280100-p180807/"
+        ],
+        "中后台": [
+            "风控&&https://www.zhipin.com/c101280100-p150307/",
+            "合规稽查&&https://www.zhipin.com/c101280100-p180204/",
+            "法务&&https://www.zhipin.com/c101280100-p260202/",
+            "资信评估&&https://www.zhipin.com/c101280100-p180203/",
+            "清算&&https://www.zhipin.com/c101280100-p180304/",
+            "资产评估&&https://www.zhipin.com/c101280100-p180104/",
+            "金融产品经理&&https://www.zhipin.com/c101280100-p180501/",
+            "催收员&&https://www.zhipin.com/c101280100-p180503/"
+        ],
+        "投融资": [
+            "投资经理&&https://www.zhipin.com/c101280100-p180101/",
+            "投资助理&&https://www.zhipin.com/c101280100-p180118/",
+            "行业研究&&https://www.zhipin.com/c101280100-p180103/",
+            "融资&&https://www.zhipin.com/c101280100-p180115/",
+            "投后管理&&https://www.zhipin.com/c101280100-p180117/",
+            "并购&&https://www.zhipin.com/c101280100-p180116/",
+            "投资总监/VP&&https://www.zhipin.com/c101280100-p180112/",
+            "投资者关系/证券事务代表&&https://www.zhipin.com/c101280100-p180120/",
+            "其他投融资职位&&https://www.zhipin.com/c101280100-p180111/"
+        ],
+        "保险": [
+            "保险理赔&&https://www.zhipin.com/c101280100-p180703/",
+            "保险精算师&&https://www.zhipin.com/c101280100-p180702/"
+        ],
+        "金融销售": [
+            "理财顾问&&https://www.zhipin.com/c101280100-p180506/",
+            "保险顾问&&https://www.zhipin.com/c101280100-p180701/",
+            "信用卡销售&&https://www.zhipin.com/c101280100-p180401/",
+            "证券经纪人&&https://www.zhipin.com/c101280100-p180801/"
+        ],
+        "其他金融职位": [
+            "其他金融职位&&https://www.zhipin.com/c101280100-p180601/"
+        ]
+    },
+    "咨询/翻译/法律": {
+        "咨询/调研": [
+            "知识产权/专利/商标代理人&&https://www.zhipin.com/c101280100-p260111/",
+            "项目申报专员&&https://www.zhipin.com/c101280100-p140804/",
+            "咨询项目管理&&https://www.zhipin.com/c101280100-p260106/",
+            "企业管理咨询&&https://www.zhipin.com/c101280100-p260101/",
+            "战略咨询&&https://www.zhipin.com/c101280100-p260107/",
+            "财务顾问&&https://www.zhipin.com/c101280100-p150303/",
+            "IT咨询顾问&&https://www.zhipin.com/c101280100-p260104/",
+            "咨询经理&&https://www.zhipin.com/c101280100-p260402/",
+            "人力资源咨询顾问&&https://www.zhipin.com/c101280100-p260105/",
+            "猎头顾问&&https://www.zhipin.com/c101280100-p260108/",
+            "咨询总监&&https://www.zhipin.com/c101280100-p260401/",
+            "市场调研&&https://www.zhipin.com/c101280100-p260109/",
+            "数据分析师&&https://www.zhipin.com/c101280100-p100511/",
+            "心理咨询师&&https://www.zhipin.com/c101280100-p260112/",
+            "婚恋咨询师&&https://www.zhipin.com/c101280100-p260113/",
+            "其他咨询顾问&&https://www.zhipin.com/c101280100-p260110/"
+        ],
+        "翻译": [
+            "英语翻译&&https://www.zhipin.com/c101280100-p260301/",
+            "日语翻译&&https://www.zhipin.com/c101280100-p260302/",
+            "韩语/朝鲜语翻译&&https://www.zhipin.com/c101280100-p260303/",
+            "俄语翻译&&https://www.zhipin.com/c101280100-p260306/",
+            "西班牙语翻译&&https://www.zhipin.com/c101280100-p260307/",
+            "德语翻译&&https://www.zhipin.com/c101280100-p260305/",
+            "法语翻译&&https://www.zhipin.com/c101280100-p260304/",
+            "其他语种翻译&&https://www.zhipin.com/c101280100-p260308/"
+        ],
+        "法律服务": [
+            "事务所律师&&https://www.zhipin.com/c101280100-p260201/",
+            "律师助理&&https://www.zhipin.com/c101280100-p260204/",
+            "法务&&https://www.zhipin.com/c101280100-p260202/",
+            "专利律师&&https://www.zhipin.com/c101280100-p150503/",
+            "知识产权律师&&https://www.zhipin.com/c101280100-p260203/",
+            "知识产权/专利/商标代理人&&https://www.zhipin.com/c101280100-p260111/"
+        ],
+        "其他咨询类职位": [
+            "其他咨询/翻译类职位&&https://www.zhipin.com/c101280100-p260501/"
+        ]
+    },
+    "能源/环保/农业": {
+        "能源/地质": [
+            "光伏系统工程师&&https://www.zhipin.com/c101280100-p301002/",
+            "风电/光伏运维工程师&&https://www.zhipin.com/c101280100-p301003/",
+            "水利工程师&&https://www.zhipin.com/c101280100-p301004/",
+            "地质工程师&&https://www.zhipin.com/c101280100-p301001/"
+        ],
+        "环保": [
+            "EHS工程师&&https://www.zhipin.com/c101280100-p300903/",
+            "环境采样/检测员&&https://www.zhipin.com/c101280100-p300905/",
+            "环评工程师&&https://www.zhipin.com/c101280100-p300902/",
+            "环保工程师&&https://www.zhipin.com/c101280100-p300901/",
+            "碳排放管理师&&https://www.zhipin.com/c101280100-p300904/"
+        ],
+        "农/林/牧/渔": [
+            "农业/林业技术员&&https://www.zhipin.com/c101280100-p400101/",
+            "饲养员&&https://www.zhipin.com/c101280100-p400201/",
+            "养殖技术员&&https://www.zhipin.com/c101280100-p400202/",
+            "畜牧兽医&&https://www.zhipin.com/c101280100-p400203/"
+        ]
+    },
+    "高级管理": {
+        "高级管理职位": [
+            "总裁/总经理/CEO&&https://www.zhipin.com/c101280100-p150407/",
+            "副总裁/副总经理/VP&&https://www.zhipin.com/c101280100-p150408/",
+            "总助/CEO助理/董事长助理&&https://www.zhipin.com/c101280100-p150411/",
+            "区域负责人(辖多个分公司)&&https://www.zhipin.com/c101280100-p150410/",
+            "分公司/代表处负责人&&https://www.zhipin.com/c101280100-p150409/",
+            "董事会秘书&&https://www.zhipin.com/c101280100-p150414/",
+            "联合创始人&&https://www.zhipin.com/c101280100-p150413/",
+            "高级管理职位&&https://www.zhipin.com/c101280100-p150499/"
+        ]
+    }
+}
