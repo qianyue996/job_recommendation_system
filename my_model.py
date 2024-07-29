@@ -1,3 +1,4 @@
+from mimetypes import init
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -5,22 +6,18 @@ from transformers import BertModel, BertForSequenceClassification
 from my_dataset import MyDataset
 
 class MyModel(nn.Module):
-    def __init__(self, dropout=0.5):
+    def __init__(self, num_classes_level_1, num_classes_level_2):
         super().__init__()
-        with open('data/train_type.txt', 'r', encoding='utf-8') as f:
-            name_typelist = [i.strip() for i in f.readlines()]
-        self.bert = BertModel.from_pretrained("models/bert-base-multilingual-cased")
-        self.dropout = nn.Dropout(dropout)
-        self.linear = nn.Linear(768, len(name_typelist))
-        self.relu = nn.ReLU()
+        self.bert = BertModel.from_pretrained('bert-base-uncased')
+        self.classifier_level_1 = nn.Linear(self.bert.config.hidden_size, num_classes_level_1)
+        self.classifier_level_2 = nn.Linear(self.bert.config.hidden_size, num_classes_level_2)
 
-    def forward(self, data):
-        inputs = data
-        _, pooled_output = self.bert(**inputs, return_dict=False)
-        dropout_output = self.dropout(pooled_output)
-        linear_output = self.linear(dropout_output)
-        final_layer = self.relu(linear_output)
-        return final_layer
+    def forward(self, input_ids, attention_mask):
+        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
+        pooled_output = outputs.pooler_output
+        logits_level_1 = self.classifier_level_1(pooled_output)
+        logits_level_2 = self.classifier_level_2(pooled_output)
+        return logits_level_1, logits_level_2
 
 if __name__ == '__main__':
     # from transformers import BertTokenizer, BertModel

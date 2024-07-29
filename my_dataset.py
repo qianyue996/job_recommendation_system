@@ -3,6 +3,7 @@ from torch.utils.data import Dataset, DataLoader
 import os
 import pandas as pd
 from transformers import BertTokenizer
+from sklearn.preprocessing import LabelEncoder
 
 def prepare_data(flag=False):
     datapath='myspider/train.txt'
@@ -30,11 +31,34 @@ class MyDataset(Dataset):
     def __init__(self, datadir, mode="train"):
         super().__init__()
         self.datadir = datadir
-        self.inputs = []
+        df = pd.read_csv(data_file, encoding='utf_8_sig')
 
+        # 标签编码
+        label_big = df['0'].to_list()
+        label_middle = df['1'].to_list()
+        label_small = df['2'].to_list()
+        label_specific = df['3'].to_list()
+
+        encoder_level_1 = LabelEncoder()
+        encoder_level_2 = LabelEncoder()
+        encoder_level_3 = LabelEncoder()
+        encoder_level_4 = LabelEncoder()
+
+        encoded_categories_level_1 = encoder_level_1.fit_transform(label_big)
+        encoded_categories_level_2 = encoder_level_2.fit_transform(label_middle)
+        encoded_categories_level_3 = encoder_level_3.fit_transform(label_small)
+        encoded_categories_level_4 = encoder_level_4.fit_transform(label_specific)
+
+        # 构造标签张量
+        labels_level_1 = torch.tensor(encoded_categories_level_1)
+        labels_level_2 = torch.tensor(encoded_categories_level_2)
+        labels_level_3 = torch.tensor(encoded_categories_level_3)
+        labels_level_4 = torch.tensor(encoded_categories_level_4)
+
+        self.inputs = []
         self.tokenizer = BertTokenizer.from_pretrained('models/bert-base-multilingual-cased')
         data_file = os.path.join(self.datadir, f'{mode}.csv')
-        df = pd.read_csv(data_file, encoding='utf_8_sig')
+        
         name_list = df['0'].to_list()
         with open('data/train_type.txt', 'r', encoding='utf-8') as f:
             self.name_typelist = [i.strip() for i in f.readlines()]
@@ -51,15 +75,13 @@ class MyDataset(Dataset):
 
     def __getitem__(self, idx):
         text = self.inputs[idx]
-        label = self.name_typelist.index(self.labels[idx])
 
         encoder = self.tokenizer(text, truncation=True, add_special_tokens=True, return_token_type_ids=False,
                                     return_attention_mask=True, max_length=512, padding='max_length', return_tensors='pt')
 
         return {
             'input_ids':  encoder['input_ids'].squeeze(),
-            'attention_mask': encoder['attention_mask'].squeeze(),
-            'label': torch.tensor(label, dtype=torch.long)
+            'attention_mask': encoder['attention_mask'].squeeze()
         }
 
 if __name__ == '__main__':
