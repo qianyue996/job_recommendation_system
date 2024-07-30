@@ -31,7 +31,7 @@ class MyDataset(Dataset):
     def __init__(self, datadir, mode="train"):
         super().__init__()
         self.datadir = datadir
-        df = pd.read_csv(data_file, encoding='utf_8_sig')
+        df = pd.read_csv("data/train.csv", encoding='utf_8_sig')
 
         # 标签编码
         label_big = df['0'].to_list()
