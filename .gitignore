@@ -1,12 +1,15 @@
-*
+!/models/bert-base-multilingual-cased
+
+*/
 !.gitignore
 !README.md
 !requirements.txt
 
-!models/bert-base-multilingual-cased
 
 !24-8-15_train.py
 !train.xlsx
 !my_loss.py
 !my_model.py
 
+miniserve-0.27.1-x86_64-pc-windows-msvc.exe
+test.ipynb
