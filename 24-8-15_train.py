@@ -61,11 +61,11 @@ if __name__ == '__main__':
     train_file = 'train.xlsx'
     label_file = 'data/_label.json'
     dataset = MyDataset(train_file)
-    dataloader = DataLoader(dataset=dataset, batch_size=32, shuffle=True)
+    dataloader = DataLoader(dataset=dataset, batch_size=16, shuffle=True)
 
     num1, num2 = dataset.class_num()
     model = MyModel(len(num1), len(num2)).to('cuda')
-    optimizer = AdamW(model.parameters(), lr=1e-3)
+    optimizer = AdamW(model.parameters(), lr=1e-4)
     epochs = 20
     model.train()
     for epoch in range(epochs):
