@@ -12,6 +12,11 @@ from my_model import MyModel
 class MyDataset(Dataset):
     def __init__(self, file_path):
         super().__init__()
+        print('''
+---------------
+正在加载数据集...
+---------------
+        ''')
         df = pd.read_excel('data/可视化.xlsx')
         # 删除含有空值的行，在原数据集上操作
         df.dropna(inplace=True)

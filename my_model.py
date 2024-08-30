@@ -10,6 +10,11 @@ class MyModel(nn.Module):
     def __init__(self, num_classes_level1, num_classes_level2):
         super().__init__()
         # 加载预训练的BERT模型
+        print('''
+------------------
+正在加载预训练模型...
+------------------
+        ''')
         self.bert = BertModel.from_pretrained('models/bert-base-multilingual-cased')
         # 定义每个层级的分类器
         self.classifier_level1 = nn.Linear(self.bert.config.hidden_size, num_classes_level1)
