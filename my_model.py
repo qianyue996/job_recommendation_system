@@ -19,8 +19,8 @@ class MyModel(nn.Module):
         # 定义每个层级的分类器
         self.classifier_level1 = nn.Linear(self.bert.config.hidden_size, num_classes_level1)
         self.classifier_level2 = nn.Linear(self.bert.config.hidden_size, num_classes_level2)
-        self.dropout = nn.Dropout(0.5)
-        self.softmax = nn.Softmax(dim=-1)
+        # self.dropout = nn.Dropout(0.5)
+        self.relu = nn.ReLU()
 
     def forward(self, input_ids, attention_mask):
         # 使用BERT模型提取特征
@@ -29,10 +29,10 @@ class MyModel(nn.Module):
         cls_output = bert_outputs.last_hidden_state[:, 0, :]
         # 分别对三个层级进行分类
         output_level1 = self.classifier_level1(cls_output)
-        dropout_level1 = self.dropout(output_level1)
-        softmax_level1 = self.softmax(dropout_level1)
+        # dropout_level1 = self.dropout(output_level1)
+        relu_level1 = self.relu(output_level1)
         
         output_level2 = self.classifier_level2(cls_output)
-        dropout_level2 = self.dropout(output_level2)
-        softmax_level2 = self.softmax(dropout_level2)
-        return softmax_level1, softmax_level2
+        # dropout_level2 = self.dropout(output_level2)
+        relu_level2 = self.relu(output_level2)
+        return relu_level1, relu_level2

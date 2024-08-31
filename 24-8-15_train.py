@@ -66,15 +66,20 @@ if __name__ == '__main__':
     train_file = 'train.xlsx'
     label_file = 'data/_label.json'
     dataset = MyDataset(train_file)
-    dataloader = DataLoader(dataset=dataset, batch_size=16, shuffle=True)
+    train_size = int(len(dataset) * 0.1)
+    val_size = len(dataset) - train_size
+    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+
+    train_dataloader = DataLoader(dataset=train_dataset, batch_size=16, shuffle=True)
+    val_dataloader = DataLoader(dataset=val_dataset, batch_size=16, shuffle=True)
 
     num1, num2 = dataset.class_num()
     model = MyModel(len(num1), len(num2)).to('cuda')
-    optimizer = AdamW(model.parameters(), lr=1e-4)
+    optimizer = AdamW(model.parameters(), lr=5e-4)
     epochs = 20
     model.train()
     for epoch in range(epochs):
-        bar1 = tqdm.tqdm(enumerate(dataloader), desc='Progress', unit='step', total=len(dataloader))
+        bar1 = tqdm.tqdm(enumerate(train_dataloader), desc='Progress', unit='step', total=len(train_dataloader))
         avg_loss = 0
         for i, data in bar1:
             input, labels = data
@@ -87,9 +92,36 @@ if __name__ == '__main__':
             loss.backward()
             optimizer.zero_grad()
             optimizer.step()
-            avg_loss += loss
             bar1.set_postfix({
                 'epoch' : f'{epoch}',
-                'avg_loss' : f'{avg_loss.item()/(i+1):.3f}',
-                'loss' : f'{loss.item():.3f}'
+                'loss' : f'{loss.item():.3f}',
                 })
+        # 验证阶段
+        model.eval()
+        # 评估参数
+        num_examples = 0
+        total_correct = 0
+        total_loss = 0.
+        with torch.no_grad():
+            val_bar = tqdm.tqdm(enumerate(val_dataloader), desc='Progress', unit='step', total=len(val_dataloader))
+            for i, data in val_bar:
+                input, labels = data
+                input_ids = input['input_ids'].to('cuda')
+                attention_mask = input['attention_mask'].to('cuda')
+                label1 = labels['label_level1'].to('cuda')
+                label2 = labels['label_level2'].to('cuda')
+                preds = model(input_ids, attention_mask)
+
+                num_examples += len(input_ids)
+                for i in range(len(preds)):
+                    level1_correct = (preds[0].argmax(dim=-1) == label1.argmax(dim=-1)).sum().item()
+                    if level1_correct == 0:
+                        correct = 0
+                    else:
+                        level2_correct = (preds[1].argmax(dim=-1) == label2.argmax(dim=-1)).sum().item()
+                        correct = level1_correct + level2_correct
+                total_correct += correct
+                accuracy = total_correct / num_examples
+                total_loss += loss.item()
+                avg_loss = total_loss / num_examples
+                val_bar.set_postfix(epoch=epoch, accuracy=accuracy, avg_loss=avg_loss)
