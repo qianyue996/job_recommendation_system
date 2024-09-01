@@ -1,15 +1,12 @@
 import tqdm
 import torch
-import torch.nn as nn
-from torch.optim import AdamW
-from torch.utils.data import Dataset, DataLoader
 import pandas as pd
 from transformers import BertTokenizer, BertModel
 
-from my_loss import MyLoss as loss_fc
+from my_loss import MyLoss as loss_fn
 from my_model import MyModel
 
-class MyDataset(Dataset):
+class MyDataset(torch.utils.data.Dataset):
     def __init__(self, file_path):
         super().__init__()
         print('''
@@ -70,31 +67,39 @@ if __name__ == '__main__':
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 
-    train_dataloader = DataLoader(dataset=train_dataset, batch_size=16, shuffle=True)
-    val_dataloader = DataLoader(dataset=val_dataset, batch_size=16, shuffle=True)
+    train_dataloader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=16, shuffle=True)
+    val_dataloader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=16, shuffle=True)
 
     num1, num2 = dataset.class_num()
     model = MyModel(len(num1), len(num2)).to('cuda')
-    optimizer = AdamW(model.parameters(), lr=5e-4)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
     epochs = 20
     model.train()
     for epoch in range(epochs):
+        old_loss = 999999
         bar1 = tqdm.tqdm(enumerate(train_dataloader), desc='Progress', unit='step', total=len(train_dataloader))
-        avg_loss = 0
         for i, data in bar1:
+            # 清空优化器的梯度
+            optimizer.zero_grad()
+            # 从批次中提取输入数据和标签
             input, labels = data
             input_ids = input['input_ids'].to('cuda')
             attention_mask = input['attention_mask'].to('cuda')
             outputs = model(input_ids, attention_mask)
             label1 = labels['label_level1'].to('cuda')
             label2 = labels['label_level2'].to('cuda')
-            loss = loss_fc.forward(outputs, label1, label2)
+            # 计算损失
+            loss = loss_fn.forward(outputs, label1, label2)
+            # 反向传播损失
             loss.backward()
-            optimizer.zero_grad()
+            # 更新模型参数
             optimizer.step()
+            # 取此批次的最小loss
+            if loss <= old_loss:
+                old_loss = loss
             bar1.set_postfix({
                 'epoch' : f'{epoch}',
-                'loss' : f'{loss.item():.3f}',
+                'loss' : f'{old_loss.item():.3f}',
                 })
         # 验证阶段
         model.eval()
