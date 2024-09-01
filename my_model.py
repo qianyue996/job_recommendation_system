@@ -3,7 +3,7 @@ import torch.nn as nn
 from torch.nn.functional import pad
 # torch.nn.functional.pad(t, (1, 1, 1, 1))# 左、右、上、下各填充‘’1‘’个0
 from torch.utils.data import DataLoader
-from transformers import BertModel, BertForSequenceClassification
+from transformers import BertForSequenceClassification
 from my_dataset import MyDataset
 
 class MyModel(nn.Module):
@@ -15,7 +15,7 @@ class MyModel(nn.Module):
 正在加载预训练模型...
 ------------------
         ''')
-        self.bert = BertModel.from_pretrained('models/bert-base-multilingual-cased')
+        self.bert = BertForSequenceClassification.from_pretrained('models/bert-base-multilingual-cased')
         # 定义每个层级的分类器
         self.classifier_level1 = nn.Linear(self.bert.config.hidden_size, num_classes_level1)
         self.classifier_level2 = nn.Linear(self.bert.config.hidden_size, num_classes_level2)

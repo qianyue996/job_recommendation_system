@@ -2,11 +2,10 @@ import os
 
 import tqdm
 import torch
+from torch.utils.tensorboard import SummaryWriter
 import pandas as pd
 from transformers import BertTokenizer, BertModel
 
-from my_loss import MyLoss as loss_fn
-from my_model import MyModel
 
 class MyDataset(torch.utils.data.Dataset):
     def __init__(self, file_path):
@@ -20,14 +19,12 @@ class MyDataset(torch.utils.data.Dataset):
         # 删除含有空值的行，在原数据集上操作
         df.dropna(inplace=True)
         self.df_data = df['工作描述'].to_list()
-        self.df_label1 = df['行业'].to_list()
-        self.df_label2 = df['岗位名'].to_list()
+        self.df_labels = df['岗位名'].to_list()
         self.tokenizer = BertTokenizer.from_pretrained('models/bert-base-multilingual-cased')
 
-        self.class_df_label1 = df.drop_duplicates(subset=['行业'], keep='first', inplace=False)['行业'].to_list()
-        self.class_df_label2 = df.drop_duplicates(subset=['岗位名'], keep='first', inplace=False)['岗位名'].to_list()
+        self.num_classes = df.drop_duplicates(subset=['岗位名'], keep='first', inplace=False)['岗位名'].to_list()
     def class_num(self):
-        return self.class_df_label1, self.class_df_label2
+        return len(self.num_classes)
 
     def __len__(self):
         return len(self.df_data)
@@ -48,50 +45,61 @@ class MyDataset(torch.utils.data.Dataset):
             'attention_mask': attention_mask
         }
 
-        poi_level1 = self.class_df_label1.index(self.df_label1[idx])
-        label_level1 = torch.zeros(len(self.class_df_label1))
-        label_level1[poi_level1] = 1
+        poi_labels = self.num_classes.index(self.df_labels[idx])
+        labels = torch.zeros(len(self.num_classes))
+        labels[poi_labels] = 1
 
-        poi_level2 = self.class_df_label2.index(self.df_label2[idx])
-        label_level2 = torch.zeros(len(self.class_df_label2))
-        label_level2[poi_level2] = 1
-        labels = {
-            'label_level1': label_level1,
-            'label_level2': label_level2
-        }
         return inputs, labels
 
-def train(model, train_dataloader, optimizer, epoch):
+# 创建自定义的分类器
+class CustomBertForSequenceClassification(torch.nn.Module):
+    def __init__(self, bert_model, num_labels):
+        super().__init__()
+        # 加载预训练的BERT模型
+        print('''
+------------------
+正在加载预训练模型...
+------------------
+        ''')
+        self.bert = bert_model
+        self.classifier = torch.nn.Linear(bert_model.config.hidden_size, num_labels)
+        
+    def forward(self, input_ids, attention_mask):
+        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
+        cls_output = outputs.last_hidden_state[:, 0, :]
+        logits = self.classifier(cls_output)
+        return logits
+
+def train(model, train_dataloader, criterion, optimizer, epoch):
     model.train()
-    old_loss = 999999
     bar1 = tqdm.tqdm(enumerate(train_dataloader), desc='Progress', unit='step', total=len(train_dataloader))
     for i, data in bar1:
-        # 清空优化器的梯度
-        optimizer.zero_grad()
         # 从批次中提取输入数据和标签
         input, labels = data
+        # 将数据添加到设备(cuda or cpu)
         input_ids = input['input_ids'].to('cuda')
         attention_mask = input['attention_mask'].to('cuda')
-        outputs = model(input_ids, attention_mask)
-        label1 = labels['label_level1'].to('cuda')
-        label2 = labels['label_level2'].to('cuda')
+        labels = labels.to('cuda')
+        # 清空优化器的梯度
+        optimizer.zero_grad()
+        outputs = model(input_ids=input_ids, attention_mask=attention_mask)
         # 计算损失
-        loss = loss_fn.forward(outputs, label1, label2)
+        loss = criterion(outputs, labels.float())
         # 反向传播损失
         loss.backward()
         # 更新模型参数
         optimizer.step()
-        # 取此批次的最小loss
-        if loss <= old_loss:
-            old_loss = loss
+        # 写入log
+        writer('n_batch', 'loss', i, loss)
+        # 更新tqdm进度条
         bar1.set_postfix({
-            'epoch' : f'{epoch}',
-            'loss' : f'{old_loss.item():.3f}',
+            'epoch' : epoch,
+            'loss' : loss.item(),
             'lr' : optimizer.state_dict()['param_groups'][0]['lr']
             })
     return model
 
-def val(model, val_dataloader, epoch):
+def val(model, val_dataloader, criterion, epoch):
     # 验证阶段
     model.eval()
     # 评估参数
@@ -104,22 +112,15 @@ def val(model, val_dataloader, epoch):
             input, labels = data
             input_ids = input['input_ids'].to('cuda')
             attention_mask = input['attention_mask'].to('cuda')
-            label1 = labels['label_level1'].to('cuda')
-            label2 = labels['label_level2'].to('cuda')
+            labels = labels.to('cuda')
             preds = model(input_ids, attention_mask)
-
+            loss = criterion(preds, labels.float())
             num_examples += len(input_ids)
-            for i in range(len(preds)):
-                level1_correct = (preds[0].argmax(dim=-1) == label1.argmax(dim=-1)).sum().item()
-                if level1_correct == 0:
-                    correct = 0
-                else:
-                    level2_correct = (preds[1].argmax(dim=-1) == label2.argmax(dim=-1)).sum().item()
-                    correct = level1_correct + level2_correct
+            correct = (preds[0].argmax(dim=-1) == labels.argmax(dim=-1)).sum().item()
             total_correct += correct
             accuracy = total_correct / num_examples
             total_loss += loss.item()
-            avg_loss = total_loss / num_examples
+            avg_loss = total_loss / (i+1)
             val_bar.set_postfix(epoch=epoch, accuracy=accuracy, avg_loss=avg_loss)
     return accuracy
 
@@ -129,6 +130,10 @@ def model_save(model, accuracy, epoch):
     model_name = f'epoch={epoch}_accuracy={accuracy}.pth'
     save_dir = os.path.join("checkpoints", model_name)
     torch.save(model, save_dir)
+
+def writer(function_name, x):
+    with SummaryWriter('logs') as writer:
+        writer.add_scalars('logs', {})
 
 def main():
     train_file = 'train.xlsx'
@@ -141,15 +146,21 @@ def main():
     train_dataloader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=16, shuffle=True)
     val_dataloader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=16, shuffle=True)
 
-    num1, num2 = dataset.class_num()
-    model = MyModel(len(num1), len(num2)).to('cuda')
+    num_classes = dataset.class_num()
+
+    # 加载BERT模型，设置输出的类别数量
+    bert_model = BertModel.from_pretrained('models/bert-base-multilingual-cased')
+    model = CustomBertForSequenceClassification(bert_model, num_labels=num_classes).to('cuda')
+
+    # model = MyModel(len(num1), len(num2)).to('cuda')
     # optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
-    optimizer = torch.optim.AdamW(params=model.parameters(), lr=1e-5, weight_decay=0.01)
+    criterion = torch.nn.BCEWithLogitsLoss()
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
 
     epochs = 20
     for epoch in range(epochs):
-        model = train(model, train_dataloader, optimizer)
-        accuracy = val(model, val_dataloader)
+        model = train(model, train_dataloader, criterion, optimizer, epoch)
+        accuracy = val(model, val_dataloader, criterion, epoch)
         if accuracy > 0.7:
             model_save(model, accuracy, epoch)
 
