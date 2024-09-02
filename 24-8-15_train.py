@@ -8,7 +8,7 @@ from transformers import BertTokenizer, BertModel
 
 
 class MyDataset(torch.utils.data.Dataset):
-    def __init__(self, file_path):
+    def __init__(self, file_path, tokenizer):
         super().__init__()
         print('''
 ---------------
@@ -20,7 +20,7 @@ class MyDataset(torch.utils.data.Dataset):
         df.dropna(inplace=True)
         self.df_data = df['工作描述'].to_list()
         self.df_labels = df['岗位名'].to_list()
-        self.tokenizer = BertTokenizer.from_pretrained('models/bert-base-multilingual-cased')
+        self.tokenizer = tokenizer
 
         self.num_classes = df.drop_duplicates(subset=['岗位名'], keep='first', inplace=False)['岗位名'].to_list()
     def class_num(self):
@@ -51,7 +51,7 @@ class MyDataset(torch.utils.data.Dataset):
 
         return inputs, labels
 
-# 创建自定义的分类器
+# 创建自定义的模型
 class CustomBertForSequenceClassification(torch.nn.Module):
     def __init__(self, bert_model, num_labels):
         super().__init__()
@@ -63,12 +63,16 @@ class CustomBertForSequenceClassification(torch.nn.Module):
         ''')
         self.bert = bert_model
         self.classifier = torch.nn.Linear(bert_model.config.hidden_size, num_labels)
+        self.dropout = torch.nn.Dropout(0.5)
+        self.relu = torch.nn.ReLU()
         
     def forward(self, input_ids, attention_mask):
         outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
         cls_output = outputs.last_hidden_state[:, 0, :]
         logits = self.classifier(cls_output)
-        return logits
+        dropout = self.dropout(logits)
+        relu_out = self.relu(dropout)
+        return relu_out
 
 def train(model, train_dataloader, criterion, optimizer, writer, epoch):
     model.train()
@@ -84,7 +88,8 @@ def train(model, train_dataloader, criterion, optimizer, writer, epoch):
         optimizer.zero_grad()
         outputs = model(input_ids=input_ids, attention_mask=attention_mask)
         # 计算损失
-        loss = criterion(outputs, labels.float())
+        loss = torch.nn.CrossEntropyLoss()(outputs, labels.float())
+        # loss = criterion(outputs, labels.float())
         # 反向传播损失
         loss.backward()
         # 更新模型参数
@@ -135,34 +140,45 @@ def model_save(model, accuracy, epoch):
     torch.save(model, save_dir)
 
 def main():
+    # 数据集路径
     train_file = 'train.xlsx'
-    dataset = MyDataset(train_file)
+
+    # bert名称
+    bert_name = 'models/bert-base-multilingual-cased'
+    # 加载分词器
+    tokenizer = BertTokenizer.from_pretrained(bert_name)
+    # 加载数据集
+    dataset = MyDataset(train_file, tokenizer)
+    # 加载模型
+    num_classes = dataset.class_num()
+    # 加载零开始的bert预训练模型
+    bert_model = BertModel.from_pretrained(bert_name)
+    # 加载训练过的模型，继续模型的进度去训练
+    # pred_model = torch.load('checkpoints/model.pth')
+    model = CustomBertForSequenceClassification(bert_model, num_labels=num_classes).to('cuda')
+
+    # 划分数据集与验证集
     train_size = int(len(dataset) * 0.8)
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 
+    # 数据集加载器
     train_dataloader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=16, shuffle=True)
     val_dataloader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=16, shuffle=True)
 
-    num_classes = dataset.class_num()
-
-    # 加载BERT模型，设置输出的类别数量
-    bert_model = BertModel.from_pretrained('models/bert-base-multilingual-cased')
-    model = CustomBertForSequenceClassification(bert_model, num_labels=num_classes).to('cuda')
-
-    # model = MyModel(len(num1), len(num2)).to('cuda')
-    # optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
+    # 定义损失函数
     criterion = torch.nn.BCEWithLogitsLoss()
+    # 定义优化器
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
-
+    # 初始化日志可视化Tensorboard
+    # 启动：tensorboard --logdir='logs'
     writer = SummaryWriter('logs')
 
     epochs = 20
     for epoch in range(epochs):
         model = train(model, train_dataloader, criterion, optimizer, writer, epoch)
         accuracy = val(model, val_dataloader, criterion, writer, epoch)
-        if accuracy > 0.7:
-            model_save(model, accuracy, epoch)
+        model_save(model, accuracy, epoch)
     writer.close()
 
 if __name__ == '__main__':
