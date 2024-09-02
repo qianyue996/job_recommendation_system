@@ -15,7 +15,7 @@ class MyDataset(torch.utils.data.Dataset):
 正在加载数据集...
 ---------------
         ''')
-        df = pd.read_excel('data/可视化.xlsx')
+        df = pd.read_excel(file_path)
         # 删除含有空值的行，在原数据集上操作
         df.dropna(inplace=True)
         self.df_data = df['工作描述'].to_list()
@@ -70,7 +70,7 @@ class CustomBertForSequenceClassification(torch.nn.Module):
         logits = self.classifier(cls_output)
         return logits
 
-def train(model, train_dataloader, criterion, optimizer, epoch):
+def train(model, train_dataloader, criterion, optimizer, writer, epoch):
     model.train()
     bar1 = tqdm.tqdm(enumerate(train_dataloader), desc='Progress', unit='step', total=len(train_dataloader))
     for i, data in bar1:
@@ -90,7 +90,7 @@ def train(model, train_dataloader, criterion, optimizer, epoch):
         # 更新模型参数
         optimizer.step()
         # 写入log
-        writer('n_batch', 'loss', i, loss)
+        writer.add_scalar('loss', loss, i)
         # 更新tqdm进度条
         bar1.set_postfix({
             'epoch' : epoch,
@@ -99,7 +99,7 @@ def train(model, train_dataloader, criterion, optimizer, epoch):
             })
     return model
 
-def val(model, val_dataloader, criterion, epoch):
+def val(model, val_dataloader, criterion, writer, epoch):
     # 验证阶段
     model.eval()
     # 评估参数
@@ -116,9 +116,12 @@ def val(model, val_dataloader, criterion, epoch):
             preds = model(input_ids, attention_mask)
             loss = criterion(preds, labels.float())
             num_examples += len(input_ids)
-            correct = (preds[0].argmax(dim=-1) == labels.argmax(dim=-1)).sum().item()
+            correct = (preds.argmax(dim=-1) == labels.argmax(dim=-1)).sum().item()
             total_correct += correct
             accuracy = total_correct / num_examples
+
+            writer.add_scalar('acc', accuracy, i)
+
             total_loss += loss.item()
             avg_loss = total_loss / (i+1)
             val_bar.set_postfix(epoch=epoch, accuracy=accuracy, avg_loss=avg_loss)
@@ -131,15 +134,10 @@ def model_save(model, accuracy, epoch):
     save_dir = os.path.join("checkpoints", model_name)
     torch.save(model, save_dir)
 
-def writer(function_name, x):
-    with SummaryWriter('logs') as writer:
-        writer.add_scalars('logs', {})
-
 def main():
     train_file = 'train.xlsx'
-    label_file = 'data/_label.json'
     dataset = MyDataset(train_file)
-    train_size = int(len(dataset) * 0.1)
+    train_size = int(len(dataset) * 0.8)
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 
@@ -157,13 +155,15 @@ def main():
     criterion = torch.nn.BCEWithLogitsLoss()
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-5)
 
+    writer = SummaryWriter('logs')
+
     epochs = 20
     for epoch in range(epochs):
-        model = train(model, train_dataloader, criterion, optimizer, epoch)
-        accuracy = val(model, val_dataloader, criterion, epoch)
+        model = train(model, train_dataloader, criterion, optimizer, writer, epoch)
+        accuracy = val(model, val_dataloader, criterion, writer, epoch)
         if accuracy > 0.7:
             model_save(model, accuracy, epoch)
-
+    writer.close()
 
 if __name__ == '__main__':
     main()
