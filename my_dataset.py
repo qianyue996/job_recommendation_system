@@ -1,33 +1,45 @@
 import torch
 import pandas as pd
+from transformers import BertTokenizer
 
 class MyDataset(torch.utils.data.Dataset):
-    def __init__(self, file_path, tokenizer):
+    def __init__(self, train, labels1, labels2):
         super().__init__()
-        print('''
----------------
-正在加载数据集...
----------------
-        ''')
+        train_text = []
+        train_labels1 = []
+        train_labels2 = []
+        target_labels1 = []
+        target_labels2 = []
         # 读取训练文件
-        df = pd.read_excel(file_path)
-        # 删除含有空值的行，在原数据集上操作
-        df.dropna(inplace=True)
-        self.df_data = df['工作描述'].to_list()
-        self.df_labels_1 = df['行业'].to_list()
-        self.df_labels_2 = df['岗位名'].to_list()
-        self.tokenizer = tokenizer
+        with open(train, 'r', encoding='utf-8') as file:
+            for data in file.readlines():
+                label1, label2, text = data.strip().split('|')
+                train_text.append(text)
+                train_labels1.append(label1)
+                train_labels2.append(label2)
+        with open(labels1, 'r', encoding='utf-8') as file:
+            for label in file.readlines():
+                target_labels1.append(label.strip())
+        with open(labels2, 'r', encoding='utf-8') as file:
+            for label in file.readlines():
+                target_labels2.append(label.strip())
+        # 加载分词器
+        self.tokenizer = BertTokenizer.from_pretrained('models/bert-base-multilingual-cased')
+        # ...
+        self.train_text = train_text
+        self.train_labels1 = train_labels1
+        self.train_labels2 = train_labels2
+        self.target_labels1 = target_labels1
+        self.target_labels2 = target_labels2
 
-        self.num_classes_1 = df.drop_duplicates(subset=['行业'], keep='first', inplace=False)['行业'].to_list()
-        self.num_classes_2 = df.drop_duplicates(subset=['岗位名'], keep='first', inplace=False)['岗位名'].to_list()
     def class_num(self):
-        return [len(self.num_classes_1), len(self.num_classes_2)]
+        return [len(self.target_labels1), len(self.target_labels2)]
 
     def __len__(self):
-        return len(self.df_data)
+        return len(self.train_text)
 
     def __getitem__(self, idx):
-        text = self.df_data[idx]
+        text = self.train_text[idx]
         encoder = self.tokenizer(text, truncation=True,
                     add_special_tokens=True,
                     return_token_type_ids=False,
@@ -42,14 +54,14 @@ class MyDataset(torch.utils.data.Dataset):
             'attention_mask': attention_mask
         }
 
-        poi_labels_1 = self.num_classes_1.index(self.df_labels_1[idx])
-        labels_1 = torch.zeros(len(self.num_classes_1))
-        labels_1[poi_labels_1] = 1
+        poi_train_label1 = self.target_labels1.index(self.train_labels1[idx])
+        train_label1 = torch.zeros(len(self.target_labels1))
+        train_label1[poi_train_label1] = 1
 
-        poi_labels_2 = self.num_classes_2.index(self.df_labels_2[idx])
-        labels_2 = torch.zeros(len(self.num_classes_2))
-        labels_2[poi_labels_2] = 1
+        poi_train_label2 = self.target_labels2.index(self.train_labels2[idx])
+        train_label2 = torch.zeros(len(self.target_labels2))
+        train_label2[poi_train_label2] = 1
 
-        labels = [labels_1, labels_2]
+        labels = [train_label1, train_label2]
 
         return inputs, labels

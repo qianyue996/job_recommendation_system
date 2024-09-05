@@ -3,16 +3,16 @@ import os
 import tqdm
 import torch
 from torch.utils.tensorboard import SummaryWriter
-import pandas as pd
-from transformers import BertTokenizer, BertModel
 
 from my_model import *
 from my_loss import *
 from my_dataset import *
 
-def train(model, train_dataloader, val_dataloader, criterion, optimizer):
+def train(model, train_dataloader, val_dataloader, optimizer):
     # 初始化日志可视化Tensorboard, 按文件夹依次排序分类exp1, exp2...
     # 启动：tensorboard --logdir='logs'
+    if not os.path.exists("logs"):
+        os.mkdir("logs")
     existing_folders = [f for f in os.listdir('logs') if os.path.isdir(os.path.join('logs', f)) and f.startswith('exp')]
     # 找到最大的数字后缀
     max_num = 0
@@ -32,14 +32,14 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
     writer = SummaryWriter(f'{new_folder_path}')
     # 训练轮数
     epochs = 20
+    total_train_step = 0
+    total_eval_step = 0
     for epoch in range(epochs):
-        total_train_step = 0
-        total_eval_step = 0
         model.train()
         # 进度条显示
         train_bar = tqdm.tqdm(train_dataloader, desc='Progress', unit='step', total=len(train_dataloader))
         for data in train_bar:
-            total_step += 1
+            total_train_step += 1
             # 从批次中提取输入数据和标签
             inputs, labels = data
             # 将数据添加到设备(cuda or cpu)
@@ -50,7 +50,7 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
             optimizer.zero_grad()
             outputs = model(input_ids=input_ids, attention_mask=attention_mask)
             # 计算损失
-            loss = sum([criterion(outputs[i], labels[i]) for i in range(len(outputs))])
+            loss = my_loss(outputs, labels)
             # 反向传播损失
             loss.backward()
             # 更新模型参数
@@ -76,15 +76,16 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
                 attention_mask = inputs['attention_mask'].to('cuda')
                 labels = [i.to('cuda') for i in labels]
                 outputs = model(input_ids, attention_mask)
-                loss = sum([criterion(outputs[i], labels[i]) for i in range(len(outputs))])
+                loss = my_loss(outputs, labels)
 
                 num_examples += len(input_ids)
-                # correct = sum([(outputs[i].argmax(dim=-1) == labels[i].argmax(dim=-1)).sum().item() for i in range(len(outputs))])
+                # 正确率计算
                 for i in range(len(input_ids)):
                     if outputs[0][i].argmax(dim=-1) == labels[0][i].argmax(dim=-1):
                         if outputs[1][i].argmax(dim=-1) == labels[1][i].argmax(dim=-1):
                             total_correct += 1
                 accuracy = round(total_correct / num_examples, 3)
+                # 写入日志
                 writer.add_scalar('accuracy/batch', accuracy, total_eval_step)
                 total_loss += round(loss.detach().item(), 3)
                 avg_loss = total_loss / (total_eval_step+1)
@@ -101,23 +102,13 @@ def model_save(model, accuracy, epoch):
 
 def main():
     # 数据集路径
-    train_file = 'train.xlsx'
-    # bert名称
-    bert_name = 'models/bert-base-multilingual-cased'
-    # 加载分词器
-    tokenizer = BertTokenizer.from_pretrained(bert_name)
+    train_data = 'data/train/train.txt'
+    labels1 = 'data/labels/labels_level1/labels.txt'
+    labels2 = 'data/labels/labels_level2/labels.txt'
     # 加载数据集
-    dataset = MyDataset(train_file, tokenizer)
+    dataset = MyDataset(train_data, labels1, labels2)
     # 加载模型
     num_classes = dataset.class_num()
-    # 加载零开始的bert预训练模型
-    bert_model = BertModel.from_pretrained(bert_name)
-    # 加载训练过的模型，继续模型的进度去训练
-    # pred_model = torch.load('checkpoints/epoch=0_accuracy=0.00047192071731949034.pth')
-    # model = pred_model.to('cuda')
-    # model = CustomBertForSequenceClassification(bert_model, num_labels=num_classes).to('cuda')
-    # torch.nn.init.xavier_uniform_(model.classifier.weight)
-    # torch.nn.init.zeros_(model.classifier.bias)
     model = HierarchicalClassifier(num_classes).to('cuda')
 
     # 划分数据集与验证集
@@ -129,12 +120,10 @@ def main():
     train_dataloader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=16, shuffle=True)
     val_dataloader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=16, shuffle=True)
 
-    # 定义损失函数
-    criterion = torch.nn.BCEWithLogitsLoss()
     # 定义优化器
     optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5)
 
-    train(model, train_dataloader, val_dataloader, criterion, optimizer)
+    train(model, train_dataloader, val_dataloader, optimizer)
 
 if __name__ == '__main__':
     main()
