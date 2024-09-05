@@ -8,6 +8,8 @@
 
 !24-8-15_train.py
 !train.xlsx
+!utils.py
+!my_dataset.py
 !my_loss.py
 !my_model.py
 

@@ -6,107 +6,9 @@ from torch.utils.tensorboard import SummaryWriter
 import pandas as pd
 from transformers import BertTokenizer, BertModel
 
-
-class MyDataset(torch.utils.data.Dataset):
-    def __init__(self, file_path, tokenizer):
-        super().__init__()
-        print('''
----------------
-正在加载数据集...
----------------
-        ''')
-        # 读取训练文件
-        df = pd.read_excel(file_path)
-        # 删除含有空值的行，在原数据集上操作
-        df.dropna(inplace=True)
-        self.df_data = df['工作描述'].to_list()
-        self.df_labels_1 = df['行业'].to_list()
-        self.df_labels_2 = df['岗位名'].to_list()
-        self.tokenizer = tokenizer
-
-        self.num_classes_1 = df.drop_duplicates(subset=['行业'], keep='first', inplace=False)['行业'].to_list()
-        self.num_classes_2 = df.drop_duplicates(subset=['岗位名'], keep='first', inplace=False)['岗位名'].to_list()
-    def class_num(self):
-        return [len(self.num_classes_1), len(self.num_classes_2)]
-
-    def __len__(self):
-        return len(self.df_data)
-
-    def __getitem__(self, idx):
-        text = self.df_data[idx]
-        encoder = self.tokenizer(text, truncation=True,
-                    add_special_tokens=True,
-                    return_token_type_ids=False,
-                    return_attention_mask=True,
-                    max_length=512,
-                    padding='max_length',
-                    return_tensors='pt')
-        input_ids = encoder['input_ids'].squeeze()
-        attention_mask = encoder['attention_mask'].squeeze()
-        inputs = {
-            'input_ids': input_ids,
-            'attention_mask': attention_mask
-        }
-
-        poi_labels_1 = self.num_classes_1.index(self.df_labels_1[idx])
-        labels_1 = torch.zeros(len(self.num_classes_1))
-        labels_1[poi_labels_1] = 1
-
-        poi_labels_2 = self.num_classes_2.index(self.df_labels_2[idx])
-        labels_2 = torch.zeros(len(self.num_classes_2))
-        labels_2[poi_labels_2] = 1
-
-        labels = [labels_1, labels_2]
-
-        return inputs, labels
-
-# 创建自定义的模型
-class CustomBertForSequenceClassification(torch.nn.Module):
-    def __init__(self, bert_model, num_labels):
-        super().__init__()
-        # 加载预训练的BERT模型
-        print('''
-------------------
-正在加载预训练模型...
-------------------
-        ''')
-        self.bert = bert_model
-        self.dropout = torch.nn.Dropout(0.5)
-        self.classifier = torch.nn.Linear(bert_model.config.hidden_size, num_labels)
-        
-    def forward(self, input_ids, attention_mask):
-        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
-        cls_output = outputs.last_hidden_state[:, 0, :]
-        dropout = self.dropout(cls_output)
-        logits = self.classifier(dropout)
-        return logits
-    
-class HierarchicalClassifier(torch.nn.Module):
-    def __init__(self, num_classes_per_level):
-        """
-        num_classes_per_level: 一个列表，每个元素表示每个层次的分类标签数量。
-        """
-        super().__init__()
-        # 加载共享的BERT模型
-        self.bert = BertModel.from_pretrained("models/bert-base-multilingual-cased")
-        # 为每个层次创建一个分类器
-        self.classifiers = torch.nn.ModuleList([torch.nn.Linear(self.bert.config.hidden_size, num_classes) for num_classes in num_classes_per_level])
-        # dropout
-        self.dropout = torch.nn.Dropout(0.3)
-
-    def forward(self, input_ids, attention_mask):
-        # BERT模型生成文本表示
-        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
-        # 使用 [CLS] token 的输出作为分类器的输入
-        cls_output = outputs.last_hidden_state[:, 0, :]
-        # 对每一层进行分类
-        logits_per_level = []
-        for classifier in self.classifiers:
-            logits = classifier(cls_output)
-            logits = self.dropout(logits)
-            logits_per_level.append(logits)
-        
-        return logits_per_level  # 返回每层分类的结果[logits1, logits2]
+from my_model import *
+from my_loss import *
+from my_dataset import *
 
 def train(model, train_dataloader, val_dataloader, criterion, optimizer):
     # 初始化日志可视化Tensorboard, 按文件夹依次排序分类exp1, exp2...
@@ -131,10 +33,13 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
     # 训练轮数
     epochs = 20
     for epoch in range(epochs):
+        total_train_step = 0
+        total_eval_step = 0
         model.train()
         # 进度条显示
-        train_bar = tqdm.tqdm(enumerate(train_dataloader), desc='Progress', unit='step', total=len(train_dataloader))
-        for batch_num, data in train_bar:
+        train_bar = tqdm.tqdm(train_dataloader, desc='Progress', unit='step', total=len(train_dataloader))
+        for data in train_bar:
+            total_step += 1
             # 从批次中提取输入数据和标签
             inputs, labels = data
             # 将数据添加到设备(cuda or cpu)
@@ -151,7 +56,7 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
             # 更新模型参数
             optimizer.step()
             # 写入log
-            writer.add_scalar('train/loss', round(loss.detach().item(), 3), batch_num)
+            writer.add_scalar('train/loss', round(loss.detach().item(), 3), total_train_step)
             # 更新tqdm进度条
             train_bar.set_postfix({
                 'epoch' : epoch,
@@ -163,8 +68,9 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
         total_correct = 0
         total_loss = 0.
         with torch.no_grad():
-            val_bar = tqdm.tqdm(enumerate(val_dataloader), desc='Progress', unit='step', total=len(val_dataloader))
-            for batch_num, data in val_bar:
+            val_bar = tqdm.tqdm(val_dataloader, desc='Progress', unit='step', total=len(val_dataloader))
+            for data in val_bar:
+                total_eval_step += 1
                 inputs, labels = data
                 input_ids = inputs['input_ids'].to('cuda')
                 attention_mask = inputs['attention_mask'].to('cuda')
@@ -179,9 +85,9 @@ def train(model, train_dataloader, val_dataloader, criterion, optimizer):
                         if outputs[1][i].argmax(dim=-1) == labels[1][i].argmax(dim=-1):
                             total_correct += 1
                 accuracy = round(total_correct / num_examples, 3)
-                writer.add_scalar('accuracy/batch', accuracy, batch_num)
+                writer.add_scalar('accuracy/batch', accuracy, total_eval_step)
                 total_loss += round(loss.detach().item(), 3)
-                avg_loss = total_loss / (batch_num+1)
+                avg_loss = total_loss / (total_eval_step+1)
                 val_bar.set_postfix(epoch=epoch, accuracy=accuracy, avg_loss=avg_loss)
         model_save(model, accuracy, epoch)
     writer.close()
@@ -226,7 +132,7 @@ def main():
     # 定义损失函数
     criterion = torch.nn.BCEWithLogitsLoss()
     # 定义优化器
-    optimizer = torch.optim.AdamW(model.parameters(), lr=2e-6)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=2e-5)
 
     train(model, train_dataloader, val_dataloader, criterion, optimizer)
 
