@@ -4,7 +4,6 @@ import ast
 import pandas as pd
 
 def init_data(file_path):
-    # train.txt labels.txt
     df = pd.read_excel(file_path)
     # 删除含有空值的行，在原数据集上操作
     df.dropna(inplace=True)
