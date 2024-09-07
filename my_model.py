@@ -67,18 +67,3 @@ class CustomBertModel(torch.nn.Module): # bert_model = BertModel(), num_classes
             logits = self.classifier(outputs)  # 取 [CLS] 的输出
 
         return logits
-
-class CustomBertModel2(torch.nn.Module): # bert_model = BertModel(), num_classes
-    def __init__(self, bert_model, num_classes: int):
-        super().__init__()
-        self.bert = BertForSequenceClassification.from_pretrained('models/bert-base-multilingual-cased', num_labels=num_classes)
-
-    def forward(self, input_ids, attention_mask, task: str):
-        # 获取嵌入层的输出
-        outputs = self.bert.embeddings(input_ids)
-        # 提取前4层用于第一个任务
-        if task == 'classifier_1':
-            outputs = self.bert(input_ids, attention_mask).pooler_output
-            logits = self.classifier(outputs)
-
-        return logits
