@@ -50,7 +50,7 @@ def train(model, train_dataloader, val_dataloader, optimizer):
             optimizer.zero_grad()
             outputs = model(input_ids=input_ids, attention_mask=attention_mask, task='classifier_1')
             # 计算损失
-            loss = my_loss(outputs, labels[0])
+            loss = my_loss(outputs, labels, task='classifier_1')
             # 反向传播损失
             loss.backward()
             # 更新模型参数
@@ -75,21 +75,23 @@ def train(model, train_dataloader, val_dataloader, optimizer):
                 input_ids = inputs['input_ids'].to('cuda')
                 attention_mask = inputs['attention_mask'].to('cuda')
                 labels = [i.to('cuda') for i in labels]
-                outputs = model(input_ids, attention_mask)
-                loss = my_loss(outputs, labels)
+                outputs = model(input_ids, attention_mask, task='classifier_1')
+                loss = my_loss(outputs, labels, task='classifier_1')
 
                 num_examples += len(input_ids)
-                # 正确率计算
+                # # 正确率计算(两层的正确率)
+                # for i in range(len(input_ids)):
+                #     if outputs[0][i].argmax(dim=-1) == labels[0][i].argmax(dim=-1):
+                #         if outputs[1][i].argmax(dim=-1) == labels[1][i].argmax(dim=-1):
+                #             total_correct += 1
+                # 第一层正确率
                 for i in range(len(input_ids)):
-                    if outputs[0][i].argmax(dim=-1) == labels[0][i].argmax(dim=-1):
-                        if outputs[1][i].argmax(dim=-1) == labels[1][i].argmax(dim=-1):
-                            total_correct += 1
+                    if outputs[i].argmax(dim=-1) == labels[0][i].argmax(dim=-1):
+                        total_correct += 1
                 accuracy = round(total_correct / num_examples, 3)
                 # 写入日志
                 writer.add_scalar('accuracy/batch', accuracy, total_eval_step)
-                total_loss += round(loss.detach().item(), 3)
-                avg_loss = total_loss / (total_eval_step+1)
-                val_bar.set_postfix(epoch=epoch, accuracy=accuracy, avg_loss=avg_loss)
+                val_bar.set_postfix(epoch=epoch, accuracy=accuracy)
         model_save(model, accuracy, epoch)
     writer.close()
 
@@ -113,7 +115,7 @@ def main():
     model = CustomBertModel(bert_model, num_classes[0]).to('cuda')
 
     # 划分数据集与验证集
-    train_size = int(len(dataset) * 0.8)
+    train_size = int(len(dataset) * 0.2)
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
 

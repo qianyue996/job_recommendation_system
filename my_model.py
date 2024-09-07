@@ -1,5 +1,5 @@
 import torch
-from transformers import BertModel
+from transformers import BertModel, BertForSequenceClassification
 
 # 创建自定义的模型
 class CustomBertForSequenceClassification(torch.nn.Module):
@@ -24,9 +24,6 @@ class CustomBertForSequenceClassification(torch.nn.Module):
 
 class HierarchicalClassifier(torch.nn.Module):
     def __init__(self, num_classes_per_level):
-        """
-        num_classes_per_level: 一个列表，每个元素表示每个层次的分类标签数量。
-        """
         super().__init__()
         # 加载共享的BERT模型
         self.bert = BertModel.from_pretrained("models/bert-base-multilingual-cased")
@@ -45,25 +42,23 @@ class HierarchicalClassifier(torch.nn.Module):
         
         return logits_per_level  # 返回每层分类的结果[logits1, logits2]
     
-class CustomBertModel(torch.nn.Module): # bert_model = BertModel, num_class
+class CustomBertModel(torch.nn.Module): # bert_model = BertModel(), num_classes
     def __init__(self, bert_model, num_classes: int):
         super().__init__()
         self.bert = bert_model
-
+        # 冻结BERT模型的所有参数
+        for param in self.bert.parameters():
+            param.requires_grad = True
         # 分类头层
         self.classifier = torch.nn.Linear(768, num_classes)
 
     def forward(self, input_ids, attention_mask, task: str):
-        # 获取嵌入层的输出
-        outputs = self.bert.embeddings(input_ids)
         # 提取前4层用于第一个任务
         if task == 'classifier_1':
-            for i in range(4):
-                layer_module = self.bert.encoder.layer[i]
-                outputs = layer_module(outputs, attention_mask)[0]
-            logits = self.classifier(outputs)  # 取 [CLS] 的输出
+            outputs = self.bert(input_ids, attention_mask).pooler_output
+            logits = self.classifier(outputs)
         
-        # 提取后4层用于第二个任务
+        # 提取后8层用于第二个任务
         elif task == 'classifier_2':
             # 首先通过前8层，计算从第5层到第12层的输出
             for i in range(4, 12):
@@ -71,6 +66,19 @@ class CustomBertModel(torch.nn.Module): # bert_model = BertModel, num_class
                 outputs = layer_module(outputs, attention_mask)[0]
             logits = self.classifier(outputs)  # 取 [CLS] 的输出
 
-        self.pooler()
+        return logits
+
+class CustomBertModel2(torch.nn.Module): # bert_model = BertModel(), num_classes
+    def __init__(self, bert_model, num_classes: int):
+        super().__init__()
+        self.bert = BertForSequenceClassification.from_pretrained('models/bert-base-multilingual-cased', num_labels=num_classes)
+
+    def forward(self, input_ids, attention_mask, task: str):
+        # 获取嵌入层的输出
+        outputs = self.bert.embeddings(input_ids)
+        # 提取前4层用于第一个任务
+        if task == 'classifier_1':
+            outputs = self.bert(input_ids, attention_mask).pooler_output
+            logits = self.classifier(outputs)
 
         return logits
