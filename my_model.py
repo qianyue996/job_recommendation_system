@@ -44,3 +44,33 @@ class HierarchicalClassifier(torch.nn.Module):
             logits_per_level.append(logits)
         
         return logits_per_level  # 返回每层分类的结果[logits1, logits2]
+    
+class CustomBertModel(torch.nn.Module): # bert_model = BertModel, num_class
+    def __init__(self, bert_model, num_classes: int):
+        super().__init__()
+        self.bert = bert_model
+
+        # 分类头层
+        self.classifier = torch.nn.Linear(768, num_classes)
+
+    def forward(self, input_ids, attention_mask, task: str):
+        # 获取嵌入层的输出
+        outputs = self.bert.embeddings(input_ids)
+        # 提取前4层用于第一个任务
+        if task == 'classifier_1':
+            for i in range(4):
+                layer_module = self.bert.encoder.layer[i]
+                outputs = layer_module(outputs, attention_mask)[0]
+            logits = self.classifier(outputs)  # 取 [CLS] 的输出
+        
+        # 提取后4层用于第二个任务
+        elif task == 'classifier_2':
+            # 首先通过前8层，计算从第5层到第12层的输出
+            for i in range(4, 12):
+                layer_module = self.bert.encoder.layer[i]
+                outputs = layer_module(outputs, attention_mask)[0]
+            logits = self.classifier(outputs)  # 取 [CLS] 的输出
+
+        self.pooler()
+
+        return logits

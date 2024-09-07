@@ -48,9 +48,9 @@ def train(model, train_dataloader, val_dataloader, optimizer):
             labels = [i.to('cuda') for i in labels]
             # 清空优化器的梯度
             optimizer.zero_grad()
-            outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+            outputs = model(input_ids=input_ids, attention_mask=attention_mask, task='classifier_1')
             # 计算损失
-            loss = my_loss(outputs, labels)
+            loss = my_loss(outputs, labels[0])
             # 反向传播损失
             loss.backward()
             # 更新模型参数
@@ -109,7 +109,8 @@ def main():
     dataset = MyDataset(train_data, labels1, labels2)
     # 加载模型
     num_classes = dataset.class_num()
-    model = HierarchicalClassifier(num_classes).to('cuda')
+    bert_model = BertModel.from_pretrained("models/bert-base-multilingual-cased")
+    model = CustomBertModel(bert_model, num_classes[0]).to('cuda')
 
     # 划分数据集与验证集
     train_size = int(len(dataset) * 0.8)
@@ -127,3 +128,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# TODO 先训练第一层的模型，然后再根据第一层预测的的概率传递给第二层的分类器，根据概率去设计损失函数的惩罚结果，
+# 在这之前要根据第一级类别数量，去逐个归纳在第二层里面的子分类各有多少，于是就形成了层次多分类模型

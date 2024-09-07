@@ -51,7 +51,7 @@ class MyDataset(torch.utils.data.Dataset):
         attention_mask = encoder['attention_mask'].squeeze()
         inputs = {
             'input_ids': input_ids,
-            'attention_mask': attention_mask
+            'attention_mask': attention_mask.to(torch.float)
         }
 
         poi_train_label1 = self.target_labels1.index(self.train_labels1[idx])
