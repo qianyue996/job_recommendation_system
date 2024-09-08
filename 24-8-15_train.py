@@ -66,7 +66,6 @@ def train(model, train_dataloader, val_dataloader, optimizer):
         model.eval()
         num_examples = 0
         total_correct = 0
-        total_loss = 0.
         with torch.no_grad():
             val_bar = tqdm.tqdm(val_dataloader, desc='Progress', unit='step', total=len(val_dataloader))
             for data in val_bar:
@@ -79,11 +78,13 @@ def train(model, train_dataloader, val_dataloader, optimizer):
                 loss = my_loss(outputs, labels, task='classifier_1')
 
                 num_examples += len(input_ids)
+                
                 # # 正确率计算(两层的正确率)
                 # for i in range(len(input_ids)):
                 #     if outputs[0][i].argmax(dim=-1) == labels[0][i].argmax(dim=-1):
                 #         if outputs[1][i].argmax(dim=-1) == labels[1][i].argmax(dim=-1):
                 #             total_correct += 1
+
                 # 第一层正确率
                 for i in range(len(input_ids)):
                     if outputs[i].argmax(dim=-1) == labels[0][i].argmax(dim=-1):
