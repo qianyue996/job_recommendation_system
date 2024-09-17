@@ -1,17 +1,12 @@
-!/models/bert-base-multilingual-cased
-
 */
-!.gitignore
-!README.md
-!requirements.txt
 
 
-!24-8-15_train.py
-!train.xlsx
-!utils.py
-!my_dataset.py
-!my_loss.py
-!my_model.py
-
+data.tar.gz
+app.py
+某招聘平台.xlsx
 miniserve-0.27.1-x86_64-pc-windows-msvc.exe
 test.ipynb
+
+train.json
+raw_data.txt
+train.xlsx
